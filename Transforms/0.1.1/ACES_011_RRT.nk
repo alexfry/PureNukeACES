@@ -1,0 +1,2281 @@
+set cut_paste_input [stack 0]
+version 12.2 v4
+push $cut_paste_input
+Group {
+ name ACES_011_RRT
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos 2987
+ ypos -66
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0x71c67100
+  note_font_size 42
+  xpos -257
+  ypos -407
+  bdwidth 282
+  bdheight 417
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0x71c67100
+  note_font_size 42
+  xpos -562
+  ypos -405
+  bdwidth 282
+  bdheight 417
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0x71c67100
+  note_font_size 42
+  xpos 51
+  ypos -406
+  bdwidth 282
+  bdheight 417
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode4
+  tile_color 0x71c67100
+  note_font_size 42
+  xpos 354
+  ypos -410
+  bdwidth 282
+  bdheight 417
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode5
+  tile_color 0x71c67100
+  note_font_size 42
+  xpos 657
+  ypos -408
+  bdwidth 282
+  bdheight 417
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode6
+  tile_color 0x71c67100
+  note_font_size 42
+  xpos 960
+  ypos -412
+  bdwidth 282
+  bdheight 417
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -454
+  ypos -984
+ }
+ Dot {
+  name Dot28
+  note_font "Bitstream Vera Sans"
+  xpos -420
+  ypos -944
+ }
+set N6dcdf400 [stack 0]
+ Dot {
+  name Dot1
+  xpos -420
+  ypos -890
+ }
+set N6dcdf000 [stack 0]
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.blue 0 2 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle3
+  xpos -371
+  ypos -840
+ }
+ Group {
+  name rrt_shaper_fwd2
+  xpos -371
+  ypos -816
+  addUserKnob {20 User}
+  addUserKnob {7 RRT_HI_SLOPE}
+  RRT_HI_SLOPE -0.55
+  addUserKnob {7 RRT_LO_SLOPE}
+  RRT_LO_SLOPE -0.55
+  addUserKnob {7 RRT_NEG_SLOPE}
+  RRT_NEG_SLOPE -0.1
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_KNOT_START}
+  RRT_KNOT_START -3
+  addUserKnob {7 RRT_KNOT_END}
+  RRT_KNOT_END 0.5
+  addUserKnob {7 RRT_KNOT_LEN}
+  RRT_KNOT_LEN 8
+  addUserKnob {7 RRT_KNOT_DEL}
+  RRT_KNOT_DEL {{"( RRT_KNOT_END - RRT_KNOT_START) / ( RRT_KNOT_LEN - 1)"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_COEFS0}
+  RRT_COEFS0 5.0706
+  addUserKnob {7 RRT_COEFS1}
+  RRT_COEFS1 4.7706
+  addUserKnob {7 RRT_COEFS2}
+  RRT_COEFS2 4
+  addUserKnob {7 RRT_COEFS3}
+  RRT_COEFS3 2.98
+  addUserKnob {7 RRT_COEFS4}
+  RRT_COEFS4 1.874
+  addUserKnob {7 RRT_COEFS5}
+  RRT_COEFS5 0.95
+  addUserKnob {7 RRT_COEFS6}
+  RRT_COEFS6 0.225
+  addUserKnob {7 RRT_COEFS7}
+  RRT_COEFS7 -0.225
+  addUserKnob {7 RRT_COEFS8}
+  RRT_COEFS8 {{"RRT_COEFS7 + (RRT_HI_SLOPE * RRT_KNOT_DEL)"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_KNOT_DENS0}
+  RRT_KNOT_DENS0 {{"( RRT_COEFS0 + RRT_COEFS1) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS1}
+  RRT_KNOT_DENS1 {{"( RRT_COEFS1 + RRT_COEFS2) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS2}
+  RRT_KNOT_DENS2 {{"( RRT_COEFS2 + RRT_COEFS3) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS3}
+  RRT_KNOT_DENS3 {{"( RRT_COEFS3 + RRT_COEFS4) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS4}
+  RRT_KNOT_DENS4 {{"( RRT_COEFS4 + RRT_COEFS5) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS5}
+  RRT_KNOT_DENS5 {{"( RRT_COEFS5 + RRT_COEFS6) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS6}
+  RRT_KNOT_DENS6 {{"( RRT_COEFS6 + RRT_COEFS7) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS7}
+  RRT_KNOT_DENS7 {{"( RRT_COEFS7 + RRT_COEFS8) / 2."}}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -101
+   ypos -2
+  }
+set N6dcde800 [stack 0]
+  Expression {
+   channel0 rgb
+   expr0 "log10( r)"
+   name logh
+   xpos -101
+   ypos 65
+  }
+set N6dcde400 [stack 0]
+  Expression {
+   temp_name0 t
+   temp_expr0 "(( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]) - int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   temp_name1 j
+   temp_expr1 "int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   expr0 "j <= 0 ? \[value parent.RRT_COEFS0] : j == 1 ? \[value parent.RRT_COEFS1] : j == 2 ? \[value parent.RRT_COEFS2] :  j == 3 ? \[value parent.RRT_COEFS3] : j == 4 ? \[value parent.RRT_COEFS4]: j == 5 ? \[value parent.RRT_COEFS5] :  \[value parent.RRT_COEFS6] "
+   expr1 "j <= 0 ? \[value parent.RRT_COEFS1] : j == 1 ? \[value parent.RRT_COEFS2] : j == 2 ? \[value parent.RRT_COEFS3] :  j == 3 ? \[value parent.RRT_COEFS4] : j == 4 ? \[value parent.RRT_COEFS5]: j == 5 ? \[value parent.RRT_COEFS6] :  \[value parent.RRT_COEFS7] "
+   expr2 "j <= 0 ? \[value parent.RRT_COEFS2] : j == 1 ? \[value parent.RRT_COEFS3] : j == 2 ? \[value parent.RRT_COEFS4] :  j == 3 ? \[value parent.RRT_COEFS5] : j == 4 ? \[value parent.RRT_COEFS6]: j == 5 ? \[value parent.RRT_COEFS7] :  \[value parent.RRT_COEFS8] "
+   name cf
+   xpos -101
+   ypos 147
+  }
+set N6dcde000 [stack 0]
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0.5}
+       {0.5 0 0}
+     }
+   name M
+   xpos -129
+   ypos 198
+  }
+push $N6dcde800
+push $N6dcde800
+  Expression {
+   channel0 rgba
+   expr0 "r <= 0.0"
+   name Expression7
+   note_font "Bitstream Vera Sans"
+   xpos 266
+   ypos 61
+  }
+push $N6dcde800
+  Expression {
+   expr0 "r * -(\[value RRT_NEG_SLOPE])"
+   name Expression6
+   note_font "Bitstream Vera Sans"
+   xpos 139
+   ypos 63
+  }
+push $N6dcde400
+  Expression {
+   channel0 rgba
+   expr0 "r >= \[value parent.RRT_KNOT_END]"
+   name Expression5
+   xpos -213
+   ypos 178
+  }
+push $N6dcde400
+  Expression {
+   channel0 rgba
+   expr0 "r <= \[value parent.RRT_KNOT_START]"
+   name Expression4
+   xpos -395
+   ypos 180
+  }
+push $N6dcde400
+  Expression {
+   channel0 rgb
+   expr0 "( \[value parent.RRT_LO_SLOPE] * r) + ( \[value parent.RRT_KNOT_DENS0] - \[value parent.RRT_LO_SLOPE] * \[value parent.RRT_KNOT_START])"
+   name dens_line127_01
+   xpos -483
+   ypos 181
+  }
+push $N6dcde400
+  Expression {
+   channel0 rgb
+   expr0 "( \[value parent.RRT_HI_SLOPE] * r) + ( \[value parent.RRT_KNOT_DENS7] - \[value parent.RRT_HI_SLOPE] * \[value parent.RRT_KNOT_END])"
+   name dens_line129_01
+   xpos -304
+   ypos 179
+  }
+  Keymix {
+   inputs 3
+   name Keymix1
+   xpos -419
+   ypos 287
+  }
+push $N6dcde000
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0}
+       {0.5 0.5 0}
+     }
+   name M1
+   xpos -42
+   ypos 198
+  }
+push $N6dcde400
+  Expression {
+   temp_name0 t
+   temp_expr0 "(( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]) - int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   temp_name1 j
+   temp_expr1 "int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   expr0 t
+   expr1 j
+   name t_and_j
+   xpos 36
+   ypos 147
+  }
+  Expression {
+   expr0 r*r
+   expr1 r
+   expr2 1
+   name Expression1
+   xpos 36
+   ypos 171
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply
+   xpos -13
+   ypos 254
+  }
+  Expression {
+   channel0 rgb
+   expr0 r+g+b
+   name Expression2
+   xpos -13
+   ypos 278
+  }
+  Keymix {
+   inputs 3
+   name Keymix2
+   xpos -284
+   ypos 347
+  }
+  Expression {
+   channel0 rgb
+   expr0 "pow(10, -r)"
+   name Expression3
+   xpos -284
+   ypos 399
+  }
+  Keymix {
+   inputs 3
+   name Keymix3
+   note_font "Bitstream Vera Sans"
+   xpos 118
+   ypos 518
+  }
+set N5b6c1c00 [stack 0]
+  Copy {
+   inputs 2
+   from0 rgba.alpha
+   to0 rgba.alpha
+   name Copy1
+   note_font "Bitstream Vera Sans"
+   selected true
+   xpos 120
+   ypos 588
+  }
+  Output {
+   name Output1
+   xpos 118
+   ypos 669
+  }
+push $N5b6c1c00
+  Viewer {
+   frame_range 1-100
+   center_fstop 0
+   colour_sample_bbox {0.5 0.205078125 0.5009765625 0.2060546875}
+   name Viewer1
+   note_font "Bitstream Vera Sans"
+   xpos -419
+   ypos 323
+  }
+ end_group
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 black -1 -1 rgba.red 0 0 black -1 -1 rgba.green 0 1 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
+  name Shuffle6
+  xpos -371
+  ypos -792
+ }
+push 0
+push $N6dcdf000
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.red 0 0 rgba.red 0 0 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle1
+  xpos -542
+  ypos -840
+ }
+ Group {
+  name rrt_shaper_fwd
+  selected true
+  xpos -542
+  ypos -816
+  addUserKnob {20 User}
+  addUserKnob {7 RRT_HI_SLOPE}
+  RRT_HI_SLOPE -0.55
+  addUserKnob {7 RRT_LO_SLOPE}
+  RRT_LO_SLOPE -0.55
+  addUserKnob {7 RRT_NEG_SLOPE}
+  RRT_NEG_SLOPE -0.1
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_KNOT_START}
+  RRT_KNOT_START -3
+  addUserKnob {7 RRT_KNOT_END}
+  RRT_KNOT_END 0.5
+  addUserKnob {7 RRT_KNOT_LEN}
+  RRT_KNOT_LEN 8
+  addUserKnob {7 RRT_KNOT_DEL}
+  RRT_KNOT_DEL {{"( RRT_KNOT_END - RRT_KNOT_START) / ( RRT_KNOT_LEN - 1)"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_COEFS0}
+  RRT_COEFS0 5.0706
+  addUserKnob {7 RRT_COEFS1}
+  RRT_COEFS1 4.7706
+  addUserKnob {7 RRT_COEFS2}
+  RRT_COEFS2 4
+  addUserKnob {7 RRT_COEFS3}
+  RRT_COEFS3 2.98
+  addUserKnob {7 RRT_COEFS4}
+  RRT_COEFS4 1.874
+  addUserKnob {7 RRT_COEFS5}
+  RRT_COEFS5 0.95
+  addUserKnob {7 RRT_COEFS6}
+  RRT_COEFS6 0.225
+  addUserKnob {7 RRT_COEFS7}
+  RRT_COEFS7 -0.225
+  addUserKnob {7 RRT_COEFS8}
+  RRT_COEFS8 {{"RRT_COEFS7 + (RRT_HI_SLOPE * RRT_KNOT_DEL)"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_KNOT_DENS0}
+  RRT_KNOT_DENS0 {{"( RRT_COEFS0 + RRT_COEFS1) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS1}
+  RRT_KNOT_DENS1 {{"( RRT_COEFS1 + RRT_COEFS2) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS2}
+  RRT_KNOT_DENS2 {{"( RRT_COEFS2 + RRT_COEFS3) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS3}
+  RRT_KNOT_DENS3 {{"( RRT_COEFS3 + RRT_COEFS4) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS4}
+  RRT_KNOT_DENS4 {{"( RRT_COEFS4 + RRT_COEFS5) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS5}
+  RRT_KNOT_DENS5 {{"( RRT_COEFS5 + RRT_COEFS6) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS6}
+  RRT_KNOT_DENS6 {{"( RRT_COEFS6 + RRT_COEFS7) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS7}
+  RRT_KNOT_DENS7 {{"( RRT_COEFS7 + RRT_COEFS8) / 2."}}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -101
+   ypos -2
+  }
+set N5b6c0800 [stack 0]
+  Expression {
+   channel0 rgb
+   expr0 "log10( r)"
+   name logh
+   xpos -101
+   ypos 65
+  }
+set N5b6c0400 [stack 0]
+  Expression {
+   temp_name0 t
+   temp_expr0 "(( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]) - int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   temp_name1 j
+   temp_expr1 "int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   expr0 "j <= 0 ? \[value parent.RRT_COEFS0] : j == 1 ? \[value parent.RRT_COEFS1] : j == 2 ? \[value parent.RRT_COEFS2] :  j == 3 ? \[value parent.RRT_COEFS3] : j == 4 ? \[value parent.RRT_COEFS4]: j == 5 ? \[value parent.RRT_COEFS5] :  \[value parent.RRT_COEFS6] "
+   expr1 "j <= 0 ? \[value parent.RRT_COEFS1] : j == 1 ? \[value parent.RRT_COEFS2] : j == 2 ? \[value parent.RRT_COEFS3] :  j == 3 ? \[value parent.RRT_COEFS4] : j == 4 ? \[value parent.RRT_COEFS5]: j == 5 ? \[value parent.RRT_COEFS6] :  \[value parent.RRT_COEFS7] "
+   expr2 "j <= 0 ? \[value parent.RRT_COEFS2] : j == 1 ? \[value parent.RRT_COEFS3] : j == 2 ? \[value parent.RRT_COEFS4] :  j == 3 ? \[value parent.RRT_COEFS5] : j == 4 ? \[value parent.RRT_COEFS6]: j == 5 ? \[value parent.RRT_COEFS7] :  \[value parent.RRT_COEFS8] "
+   name cf
+   xpos -101
+   ypos 147
+  }
+set N7740bc00 [stack 0]
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0.5}
+       {0.5 0 0}
+     }
+   name M
+   xpos -129
+   ypos 198
+  }
+push $N5b6c0800
+push $N5b6c0800
+  Expression {
+   channel0 rgba
+   expr0 "r <= 0.0"
+   name Expression7
+   note_font "Bitstream Vera Sans"
+   xpos 266
+   ypos 61
+  }
+push $N5b6c0800
+  Expression {
+   expr0 "r * -(\[value RRT_NEG_SLOPE])"
+   name Expression6
+   note_font "Bitstream Vera Sans"
+   xpos 139
+   ypos 63
+  }
+push $N5b6c0400
+  Expression {
+   channel0 rgba
+   expr0 "r >= \[value parent.RRT_KNOT_END]"
+   name Expression5
+   xpos -213
+   ypos 178
+  }
+push $N5b6c0400
+  Expression {
+   channel0 rgba
+   expr0 "r <= \[value parent.RRT_KNOT_START]"
+   name Expression4
+   xpos -395
+   ypos 180
+  }
+push $N5b6c0400
+  Expression {
+   channel0 rgb
+   expr0 "( \[value parent.RRT_LO_SLOPE] * r) + ( \[value parent.RRT_KNOT_DENS0] - \[value parent.RRT_LO_SLOPE] * \[value parent.RRT_KNOT_START])"
+   name dens_line127_01
+   xpos -483
+   ypos 181
+  }
+push $N5b6c0400
+  Expression {
+   channel0 rgb
+   expr0 "( \[value parent.RRT_HI_SLOPE] * r) + ( \[value parent.RRT_KNOT_DENS7] - \[value parent.RRT_HI_SLOPE] * \[value parent.RRT_KNOT_END])"
+   name dens_line129_01
+   xpos -304
+   ypos 179
+  }
+  Keymix {
+   inputs 3
+   name Keymix1
+   xpos -419
+   ypos 287
+  }
+push $N7740bc00
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0}
+       {0.5 0.5 0}
+     }
+   name M1
+   xpos -42
+   ypos 198
+  }
+push $N5b6c0400
+  Expression {
+   temp_name0 t
+   temp_expr0 "(( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]) - int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   temp_name1 j
+   temp_expr1 "int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   expr0 t
+   expr1 j
+   name t_and_j
+   xpos 36
+   ypos 147
+  }
+  Expression {
+   expr0 r*r
+   expr1 r
+   expr2 1
+   name Expression1
+   xpos 36
+   ypos 171
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply
+   xpos -13
+   ypos 254
+  }
+  Expression {
+   channel0 rgb
+   expr0 r+g+b
+   name Expression2
+   xpos -13
+   ypos 278
+  }
+  Keymix {
+   inputs 3
+   name Keymix2
+   xpos -284
+   ypos 347
+  }
+  Expression {
+   channel0 rgb
+   expr0 "pow(10, -r)"
+   name Expression3
+   xpos -284
+   ypos 399
+  }
+  Keymix {
+   inputs 3
+   name Keymix3
+   note_font "Bitstream Vera Sans"
+   xpos 118
+   ypos 518
+  }
+set N90c6f800 [stack 0]
+  Copy {
+   inputs 2
+   from0 rgba.alpha
+   to0 rgba.alpha
+   name Copy1
+   note_font "Bitstream Vera Sans"
+   selected true
+   xpos 120
+   ypos 588
+  }
+  Output {
+   name Output1
+   xpos 118
+   ypos 669
+  }
+push $N90c6f800
+  Viewer {
+   frame_range 1-100
+   center_fstop 0
+   colour_sample_bbox {0.5 0.205078125 0.5009765625 0.2060546875}
+   name Viewer1
+   note_font "Bitstream Vera Sans"
+   xpos -419
+   ypos 323
+  }
+ end_group
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.red 0 0 rgba.red 0 0 black -1 -1 rgba.green 0 1 black -1 -1 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
+  name Shuffle4
+  xpos -542
+  ypos -792
+ }
+push $N6dcdf000
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.green 0 1 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1 rgba.green 0 1 rgba.blue 0 2"
+  name Shuffle2
+  xpos -454
+  ypos -840
+ }
+ Group {
+  name rrt_shaper_fwd1
+  xpos -454
+  ypos -816
+  addUserKnob {20 User}
+  addUserKnob {7 RRT_HI_SLOPE}
+  RRT_HI_SLOPE -0.55
+  addUserKnob {7 RRT_LO_SLOPE}
+  RRT_LO_SLOPE -0.55
+  addUserKnob {7 RRT_NEG_SLOPE}
+  RRT_NEG_SLOPE -0.1
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_KNOT_START}
+  RRT_KNOT_START -3
+  addUserKnob {7 RRT_KNOT_END}
+  RRT_KNOT_END 0.5
+  addUserKnob {7 RRT_KNOT_LEN}
+  RRT_KNOT_LEN 8
+  addUserKnob {7 RRT_KNOT_DEL}
+  RRT_KNOT_DEL {{"( RRT_KNOT_END - RRT_KNOT_START) / ( RRT_KNOT_LEN - 1)"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_COEFS0}
+  RRT_COEFS0 5.0706
+  addUserKnob {7 RRT_COEFS1}
+  RRT_COEFS1 4.7706
+  addUserKnob {7 RRT_COEFS2}
+  RRT_COEFS2 4
+  addUserKnob {7 RRT_COEFS3}
+  RRT_COEFS3 2.98
+  addUserKnob {7 RRT_COEFS4}
+  RRT_COEFS4 1.874
+  addUserKnob {7 RRT_COEFS5}
+  RRT_COEFS5 0.95
+  addUserKnob {7 RRT_COEFS6}
+  RRT_COEFS6 0.225
+  addUserKnob {7 RRT_COEFS7}
+  RRT_COEFS7 -0.225
+  addUserKnob {7 RRT_COEFS8}
+  RRT_COEFS8 {{"RRT_COEFS7 + (RRT_HI_SLOPE * RRT_KNOT_DEL)"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 RRT_KNOT_DENS0}
+  RRT_KNOT_DENS0 {{"( RRT_COEFS0 + RRT_COEFS1) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS1}
+  RRT_KNOT_DENS1 {{"( RRT_COEFS1 + RRT_COEFS2) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS2}
+  RRT_KNOT_DENS2 {{"( RRT_COEFS2 + RRT_COEFS3) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS3}
+  RRT_KNOT_DENS3 {{"( RRT_COEFS3 + RRT_COEFS4) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS4}
+  RRT_KNOT_DENS4 {{"( RRT_COEFS4 + RRT_COEFS5) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS5}
+  RRT_KNOT_DENS5 {{"( RRT_COEFS5 + RRT_COEFS6) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS6}
+  RRT_KNOT_DENS6 {{"( RRT_COEFS6 + RRT_COEFS7) / 2."}}
+  addUserKnob {7 RRT_KNOT_DENS7}
+  RRT_KNOT_DENS7 {{"( RRT_COEFS7 + RRT_COEFS8) / 2."}}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -101
+   ypos -2
+  }
+set N90c6e400 [stack 0]
+  Expression {
+   channel0 rgb
+   expr0 "log10( r)"
+   name logh
+   xpos -101
+   ypos 65
+  }
+set N90c6e000 [stack 0]
+  Expression {
+   temp_name0 t
+   temp_expr0 "(( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]) - int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   temp_name1 j
+   temp_expr1 "int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   expr0 "j <= 0 ? \[value parent.RRT_COEFS0] : j == 1 ? \[value parent.RRT_COEFS1] : j == 2 ? \[value parent.RRT_COEFS2] :  j == 3 ? \[value parent.RRT_COEFS3] : j == 4 ? \[value parent.RRT_COEFS4]: j == 5 ? \[value parent.RRT_COEFS5] :  \[value parent.RRT_COEFS6] "
+   expr1 "j <= 0 ? \[value parent.RRT_COEFS1] : j == 1 ? \[value parent.RRT_COEFS2] : j == 2 ? \[value parent.RRT_COEFS3] :  j == 3 ? \[value parent.RRT_COEFS4] : j == 4 ? \[value parent.RRT_COEFS5]: j == 5 ? \[value parent.RRT_COEFS6] :  \[value parent.RRT_COEFS7] "
+   expr2 "j <= 0 ? \[value parent.RRT_COEFS2] : j == 1 ? \[value parent.RRT_COEFS3] : j == 2 ? \[value parent.RRT_COEFS4] :  j == 3 ? \[value parent.RRT_COEFS5] : j == 4 ? \[value parent.RRT_COEFS6]: j == 5 ? \[value parent.RRT_COEFS7] :  \[value parent.RRT_COEFS8] "
+   name cf
+   xpos -101
+   ypos 147
+  }
+set N90c6dc00 [stack 0]
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0.5}
+       {0.5 0 0}
+     }
+   name M
+   xpos -129
+   ypos 198
+  }
+push $N90c6e400
+push $N90c6e400
+  Expression {
+   channel0 rgba
+   expr0 "r <= 0.0"
+   name Expression7
+   note_font "Bitstream Vera Sans"
+   xpos 266
+   ypos 61
+  }
+push $N90c6e400
+  Expression {
+   expr0 "r * -(\[value RRT_NEG_SLOPE])"
+   name Expression6
+   note_font "Bitstream Vera Sans"
+   xpos 139
+   ypos 63
+  }
+push $N90c6e000
+  Expression {
+   channel0 rgba
+   expr0 "r >= \[value parent.RRT_KNOT_END]"
+   name Expression5
+   xpos -213
+   ypos 178
+  }
+push $N90c6e000
+  Expression {
+   channel0 rgba
+   expr0 "r <= \[value parent.RRT_KNOT_START]"
+   name Expression4
+   xpos -395
+   ypos 180
+  }
+push $N90c6e000
+  Expression {
+   channel0 rgb
+   expr0 "( \[value parent.RRT_LO_SLOPE] * r) + ( \[value parent.RRT_KNOT_DENS0] - \[value parent.RRT_LO_SLOPE] * \[value parent.RRT_KNOT_START])"
+   name dens_line127_01
+   xpos -483
+   ypos 181
+  }
+push $N90c6e000
+  Expression {
+   channel0 rgb
+   expr0 "( \[value parent.RRT_HI_SLOPE] * r) + ( \[value parent.RRT_KNOT_DENS7] - \[value parent.RRT_HI_SLOPE] * \[value parent.RRT_KNOT_END])"
+   name dens_line129_01
+   xpos -304
+   ypos 179
+  }
+  Keymix {
+   inputs 3
+   name Keymix1
+   xpos -419
+   ypos 287
+  }
+push $N90c6dc00
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0}
+       {0.5 0.5 0}
+     }
+   name M1
+   xpos -42
+   ypos 198
+  }
+push $N90c6e000
+  Expression {
+   temp_name0 t
+   temp_expr0 "(( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]) - int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   temp_name1 j
+   temp_expr1 "int((( r - \[value parent.RRT_KNOT_START]) / \[value parent.RRT_KNOT_DEL]))"
+   expr0 t
+   expr1 j
+   name t_and_j
+   xpos 36
+   ypos 147
+  }
+  Expression {
+   expr0 r*r
+   expr1 r
+   expr2 1
+   name Expression1
+   xpos 36
+   ypos 171
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply
+   xpos -13
+   ypos 254
+  }
+  Expression {
+   channel0 rgb
+   expr0 r+g+b
+   name Expression2
+   xpos -13
+   ypos 278
+  }
+  Keymix {
+   inputs 3
+   name Keymix2
+   xpos -284
+   ypos 347
+  }
+  Expression {
+   channel0 rgb
+   expr0 "pow(10, -r)"
+   name Expression3
+   xpos -284
+   ypos 399
+  }
+  Keymix {
+   inputs 3
+   name Keymix3
+   note_font "Bitstream Vera Sans"
+   xpos 118
+   ypos 518
+  }
+set N54071800 [stack 0]
+  Copy {
+   inputs 2
+   from0 rgba.alpha
+   to0 rgba.alpha
+   name Copy1
+   note_font "Bitstream Vera Sans"
+   selected true
+   xpos 120
+   ypos 588
+  }
+  Output {
+   name Output1
+   xpos 118
+   ypos 669
+  }
+push $N54071800
+  Viewer {
+   frame_range 1-100
+   center_fstop 0
+   colour_sample_bbox {0.5 0.205078125 0.5009765625 0.2060546875}
+   name Viewer1
+   note_font "Bitstream Vera Sans"
+   xpos -419
+   ypos 323
+  }
+ end_group
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 black -1 -1 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1 black -1 -1 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
+  name Shuffle5
+  xpos -454
+  ypos -792
+ }
+ Merge2 {
+  inputs 3+1
+  operation plus
+  name Plus
+  xpos -454
+  ypos -755
+ }
+ Clamp {
+  maximum_enable false
+  name Clamp1
+  label "// Clip negative values"
+  xpos -454
+  ypos -724
+ }
+ ColorMatrix {
+  matrix {
+      {0.926 0.038 0.036}
+      {0.13 0.8 0.07}
+      {-0.035 -0.035 1.07}
+    }
+  name ColorMatrix1
+  label "/* --- RRT Matrix --- */"
+  xpos -454
+  ypos -676
+ }
+set N9d88fc00 [stack 0]
+ Dot {
+  name Dot2
+  label lutIn
+  note_font_size 20
+  note_font_color 0xffffffff
+  xpos -302
+  ypos -522
+ }
+push $N6dcdf400
+ Dot {
+  name Dot30
+  note_font "Bitstream Vera Sans"
+  xpos -777
+  ypos -743
+ }
+ Dot {
+  name Dot31
+  note_font "Bitstream Vera Sans"
+  xpos -777
+  ypos 275
+ }
+push $N9d88fc00
+ Clamp {
+  maximum_enable false
+  name Clamp2
+  label "// Clip negative values"
+  xpos -454
+  ypos -640
+ }
+add_layer {channel_order channel_order.red channel_order.green channel_order.blue}
+ Expression {
+  channel0 {channel_order.red -channel_order.green -channel_order.blue}
+  expr0 "min( min( r, g), b)"
+  channel1 {-channel_order.red channel_order.green -channel_order.blue}
+  expr1 "max( max( min( r, g), min( r, b)), min( g, b))"
+  channel2 {-channel_order.red -channel_order.green channel_order.blue}
+  expr2 "max( max( max( r, g), b)  ,  0.00000001)"
+  name Expression1
+  label determine_channel_order
+  xpos -454
+  ypos -569
+ }
+add_layer {sat sat.red sat.green sat.blue sat.alpha}
+ Expression {
+  temp_name0 min_chan
+  temp_expr0 "min( min( r, g), b)"
+  temp_name1 max_chan
+  temp_expr1 "max( max( r, g), b)"
+  temp_name2 mid_chan
+  temp_expr2 "max(max( max( min( r, g), min( r, b)), min( g, b)),.000000001)"
+  channel0 sat
+  expr0 "( 1.0 - ( min_chan / max_chan) )"
+  name determineSat
+  label "sat\n"
+  xpos -454
+  ypos -518
+ }
+add_layer {hueAngle hueAngle.degrees hueAngle.radians}
+ Expression {
+  temp_name0 hueAngleDegrees
+  temp_expr0 "(( channel_order.blue == red) && ( channel_order.green == green) && ( channel_order.red == blue) && ( channel_order.red !=channel_order.blue)) ? 60.0 * ( ( channel_order.green - channel_order.red) / ( channel_order.blue - channel_order.red)): (( channel_order.blue == green) && ( channel_order.green == red) && ( channel_order.red == blue) && ( channel_order.red != channel_order.blue)) ? 60.0 * (2.0 - ( channel_order.green - channel_order.red) / ( channel_order.blue - channel_order.red)):\t (( channel_order.blue == green) && ( channel_order.green == blue) && ( channel_order.red == red) && ( channel_order.red != channel_order.blue)) ? 60.0 * (2.0 + ( channel_order.green - channel_order.red) / ( channel_order.blue - channel_order.red)):  (( channel_order.blue == blue) && ( channel_order.green == green) && ( channel_order.red == red) && ( channel_order.red != channel_order.blue)) ? 60.0 * (4.0 - ( channel_order.green - channel_order.red) / ( channel_order.blue - channel_order.red)):  (( channel_order.blue == blue) && ( channel_order.green == red) && ( channel_order.red == green) && ( channel_order.red != channel_order.blue)) ? 60.0 * (4.0 + ( channel_order.green - channel_order.red) / ( channel_order.blue - channel_order.red)):  (( channel_order.blue == red) && ( channel_order.green == blue) && ( channel_order.red == green) && ( channel_order.red != channel_order.blue)) ? 60.0 * (6.0 - ( channel_order.green - channel_order.red) / ( channel_order.blue - channel_order.red)): -1"
+  temp_name1 hueAngleRadians
+  temp_expr1 "hueAngleDegrees * (pi()/180.0)"
+  channel0 {hueAngle.degrees -hueAngle.radians}
+  expr0 hueAngleDegrees
+  channel1 {-hueAngle.degrees hueAngle.radians}
+  expr1 hueAngleRadians
+  name Expression2
+  label "Find the hue angle of the color"
+  xpos -454
+  ypos -463
+ }
+set N9d88e000 [stack 0]
+ Dot {
+  name Dot27
+  note_font "Bitstream Vera Sans"
+  xpos -698
+  ypos -73
+ }
+ Expression {
+  channel0 rgba
+  expr0 hueAngle.degrees>=0
+  name Expression9
+  note_font "Bitstream Vera Sans"
+  xpos -732
+  ypos 230
+ }
+push $N9d88e000
+ Dot {
+  name Dot23
+  xpos 1102
+  ypos -383
+ }
+set N9d88d400 [stack 0]
+ Expression {
+  temp_name0 BASE_HALF_WIDTH
+  temp_expr0 60
+  temp_name1 BASE_HALF_WIDTH_RADIANS
+  temp_expr1 "BASE_HALF_WIDTH * (pi()/180.0)"
+  temp_name2 qual
+  temp_expr2 "((hueAngle.degrees > (300.0-BASE_HALF_WIDTH)) && (hueAngle.degrees <= (300.0+BASE_HALF_WIDTH)))"
+  temp_name3 intens
+  temp_expr3 "0.5* cos( (hueAngle.radians - (BASE_HALF_WIDTH_RADIANS + (5.0/3.0*pi()-BASE_HALF_WIDTH_RADIANS))) * (pi()/BASE_HALF_WIDTH_RADIANS) ) + 0.5"
+  expr0 intens*qual
+  expr1 sat.red*qual
+  expr2 "sat.red * intens*qual"
+  expr3 qual
+  name Expression7
+  label "// RED - centered at 360 / 0 degrees or 0 / 2*M_PI"
+  xpos 970
+  ypos -297
+ }
+set N9d88d000 [stack 0]
+push $N9d88e000
+ Dot {
+  name Dot19
+  xpos 799
+  ypos -379
+ }
+set N9d88cc00 [stack 0]
+ Expression {
+  temp_name0 BASE_HALF_WIDTH
+  temp_expr0 60
+  temp_name1 BASE_HALF_WIDTH_RADIANS
+  temp_expr1 "BASE_HALF_WIDTH * (pi()/180.0)"
+  temp_name2 qual
+  temp_expr2 "((hueAngle.degrees > (240.0-BASE_HALF_WIDTH)) && (hueAngle.degrees <= (240.0+BASE_HALF_WIDTH)))"
+  temp_name3 intens
+  temp_expr3 "0.5* cos( (hueAngle.radians - (BASE_HALF_WIDTH_RADIANS + (4.0/3.0*pi()-BASE_HALF_WIDTH_RADIANS))) * (pi()/BASE_HALF_WIDTH_RADIANS) ) + 0.5"
+  expr0 intens*qual
+  expr1 sat.red*qual
+  expr2 "sat.red * intens*qual"
+  expr3 qual
+  name Expression6
+  label "// RED - centered at 360 / 0 degrees or 0 / 2*M_PI"
+  xpos 667
+  ypos -293
+ }
+set N9d88c800 [stack 0]
+push $N9d88e000
+ Dot {
+  name Dot15
+  xpos 496
+  ypos -381
+ }
+set N9d88c400 [stack 0]
+ Expression {
+  temp_name0 BASE_HALF_WIDTH
+  temp_expr0 60
+  temp_name1 BASE_HALF_WIDTH_RADIANS
+  temp_expr1 "BASE_HALF_WIDTH * (pi()/180.0)"
+  temp_name2 qual
+  temp_expr2 "((hueAngle.degrees > (180.0-BASE_HALF_WIDTH)) && (hueAngle.degrees <= (180.0+BASE_HALF_WIDTH)))"
+  temp_name3 intens
+  temp_expr3 "0.5* cos( (hueAngle.radians - (BASE_HALF_WIDTH_RADIANS + (3.0/3.0*pi()-BASE_HALF_WIDTH_RADIANS))) * (pi()/BASE_HALF_WIDTH_RADIANS) ) + 0.5"
+  expr0 intens*qual
+  expr1 sat.red*qual
+  expr2 "sat.red * intens*qual"
+  expr3 qual
+  name Expression5
+  label "// RED - centered at 360 / 0 degrees or 0 / 2*M_PI"
+  xpos 364
+  ypos -295
+ }
+set N4c95fc00 [stack 0]
+push $N9d88e000
+ Dot {
+  name Dot11
+  xpos 193
+  ypos -377
+ }
+set N4c95f800 [stack 0]
+ Expression {
+  temp_name0 BASE_HALF_WIDTH
+  temp_expr0 60
+  temp_name1 BASE_HALF_WIDTH_RADIANS
+  temp_expr1 "BASE_HALF_WIDTH * (pi()/180.0)"
+  temp_name2 qual
+  temp_expr2 "((hueAngle.degrees > (120.0-BASE_HALF_WIDTH)) && (hueAngle.degrees <= (120.0+BASE_HALF_WIDTH)))"
+  temp_name3 intens
+  temp_expr3 "0.5* cos( (hueAngle.radians - (BASE_HALF_WIDTH_RADIANS + (2.0/3.0*pi()-BASE_HALF_WIDTH_RADIANS))) * (pi()/BASE_HALF_WIDTH_RADIANS) ) + 0.5"
+  expr0 intens*qual
+  expr1 sat.red*qual
+  expr2 "sat.red * intens*qual"
+  expr3 qual
+  name Expression4
+  label "// RED - centered at 360 / 0 degrees or 0 / 2*M_PI"
+  xpos 61
+  ypos -291
+ }
+set N4c95f400 [stack 0]
+push 0
+push $N9d88e000
+ Dot {
+  name Dot5
+  xpos -420
+  ypos -376
+ }
+set N4c95f000 [stack 0]
+ Expression {
+  temp_name0 BASE_HALF_WIDTH
+  temp_expr0 60
+  temp_name1 BASE_HALF_WIDTH_RADIANS
+  temp_expr1 "BASE_HALF_WIDTH * (pi()/180.0)"
+  temp_name2 qual
+  temp_expr2 "(( ( hueAngle.degrees > (360.0-BASE_HALF_WIDTH) ) && ( hueAngle.degrees <= 360.0 )) || (( hueAngle.degrees >= 0.0 ) && ( hueAngle.degrees < BASE_HALF_WIDTH ))) "
+  temp_name3 intens
+  temp_expr3 "0.5* cos( (hueAngle.radians - (BASE_HALF_WIDTH_RADIANS + (0.0/3.0*pi()-BASE_HALF_WIDTH_RADIANS))) * (pi()/BASE_HALF_WIDTH_RADIANS) ) + 0.5"
+  expr0 intens*qual
+  expr1 sat.red*qual
+  expr2 "sat.red * intens*qual"
+  expr3 qual
+  name Expression10
+  label "// RED - centered at 360 / 0 degrees or 0 / 2*M_PI"
+  xpos -552
+  ypos -290
+ }
+set N4c95ec00 [stack 0]
+push $N9d88e000
+ Dot {
+  name Dot7
+  xpos -115
+  ypos -378
+ }
+set N4c95e800 [stack 0]
+ Expression {
+  temp_name0 BASE_HALF_WIDTH
+  temp_expr0 60
+  temp_name1 BASE_HALF_WIDTH_RADIANS
+  temp_expr1 "BASE_HALF_WIDTH * (pi()/180.0)"
+  temp_name2 qual
+  temp_expr2 "( (hueAngle.degrees > (60.0-BASE_HALF_WIDTH) ) && (hueAngle.degrees <= (60.0+BASE_HALF_WIDTH) ) )"
+  temp_name3 intens
+  temp_expr3 "0.5* cos( (hueAngle.radians - (BASE_HALF_WIDTH_RADIANS + (1.0/3.0*pi()-BASE_HALF_WIDTH_RADIANS))) * (pi()/BASE_HALF_WIDTH_RADIANS) ) + 0.5"
+  expr0 intens*qual
+  expr1 sat.red*qual
+  expr2 "sat.red * intens*qual"
+  expr3 qual
+  name Expression3
+  label "// RED - centered at 360 / 0 degrees or 0 / 2*M_PI"
+  xpos -247
+  ypos -292
+ }
+set N4c95e400 [stack 0]
+ Merge2 {
+  inputs 6+1
+  operation plus
+  name Plus9
+  xpos -598
+  ypos 102
+ }
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.red 0 0 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2 rgba.red 0 0 rgba.alpha 0 3"
+  name Shuffle26
+  label sumIntens
+  note_font "Bitstream Vera Sans"
+  xpos -598
+  ypos 126
+ }
+ Expression {
+  channel0 rgba
+  expr0 1/r
+  name Expression8
+  note_font "Bitstream Vera Sans"
+  xpos -598
+  ypos 162
+ }
+set N4c95d800 [stack 0]
+push $N9d88d000
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle32
+  label "\[value in]-->\[value out]"
+  note_font "Bitstream Vera Sans"
+  xpos 1030
+  ypos 117
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply23
+  note_font "Bitstream Vera Sans"
+  xpos 1030
+  ypos 195
+ }
+push $N9d88d000
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.alpha 0 3 rgba.red 0 0 rgba.alpha 0 3 rgba.green 0 1"
+  name Shuffle22
+  xpos 998
+  ypos -82
+ }
+push $N9d88d000
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle23
+  xpos 1026
+  ypos -224
+ }
+push $N9d88d400
+ Group {
+  name tio_preserving_tonecurve_lut1D6
+  label B_LUT
+  xpos 1078
+  ypos -283
+  addUserKnob {20 User}
+  addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
+  addUserKnob {1 ctlLutString}
+  ctlLutString "\{0.0000001912, 0.0000001912\},\{0.0000006753, 0.0000006753\},\{0.0000023862, 0.0000023862\},\n\{0.0001238797, 0.0001238797\},\{0.0261938900, 0.0261938900\},\{0.7528006753, 0.7528006753\},\n\{3.0002676549, 3.0002676549\},\{10.5390144507, 10.5390144507\},\{37.0168961033, 37.0168961033\}"
+  addUserKnob {22 createCurve l "create Curve" T "node = nuke.thisNode()\nlutKnob = node.knob('lut')\nnode.knobs()\n\ncurveString = node.knob('ctlLutString').getValue()\n\n\ncurveString =  curveString.replace('\\n','')\ncurveBlocks = curveString.split('\},\{')\ncurveBlocks = \[x.replace('\}','') for x in curveBlocks]\ncurveBlocks = \[x.replace('\{','') for x in curveBlocks]\ncurveBlocks = \[x for x in curveBlocks if x != '']\ncurveBlocks = \[x.split(',') for x in curveBlocks]\n\n\n\nfor key in curveBlocks:\n    lutKnob.setValueAt(float(key\[1]),float(key\[0]))\n" +STARTLINE}
+ }
+  BackdropNode {
+   inputs 0
+   name BackdropNode2
+   tile_color 0x71c67100
+   label ratio_preserving_tonecurve_lut1D
+   note_font_size 42
+   xpos 525
+   ypos 71
+   bdwidth 177
+   bdheight 266
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 612
+   ypos 111
+  }
+  Dot {
+   name Dot2
+   xpos 646
+   ypos 151
+  }
+set N2b79b800 [stack 0]
+push $N2b79b800
+  Expression {
+   temp_name0 NTH_POWER
+   temp_expr0 2.0
+   temp_name1 normRGB
+   temp_expr1 "( pow(r,NTH_POWER) + pow(g,NTH_POWER) + pow(b,NTH_POWER) ) / ( pow(r,NTH_POWER-1) + pow(g,NTH_POWER-1) + pow(b,NTH_POWER-1) )"
+   channel0 rgba
+   expr0 max(normRGB,.000000000001)
+   name Expression4
+   selected true
+   xpos 574
+   ypos 194
+  }
+set N2b79b400 [stack 0]
+  ColorLookup {
+   lut {master {curve L x1.912000016e-07 1.912e-07 x6.752999866e-07 6.753e-07 x2.386200094e-06 2.3862e-06 x0.0001238796976 0.0001238797 x0.02619389072 0.02619389 x0.752800703 0.7528006753 x3.000267744 3.000267655 x10.53901482 10.53901445 x37.01689529 37.0168961}
+     red {}
+     green {}
+     blue {}
+     alpha {}}
+   name R_LUT
+   xpos 535
+   ypos 230
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply2
+   xpos 621
+   ypos 255
+  }
+push $N2b79b400
+  Merge2 {
+   inputs 2
+   operation divide
+   name Multiply3
+   xpos 597
+   ypos 306
+  }
+  Output {
+   name Output1
+   xpos 597
+   ypos 430
+  }
+ end_group
+ Dot {
+  name Dot24
+  xpos 1112
+  ypos -206
+ }
+push $N9d88d400
+ Dot {
+  name Dot25
+  xpos 1220
+  ypos -332
+ }
+set N2b799c00 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge6
+  xpos 1078
+  ypos -180
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply5
+  xpos 1078
+  ypos -146
+ }
+push $N2b799c00
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus6
+  xpos 1078
+  ypos -115
+ }
+push $N2b799c00
+ Keymix {
+  inputs 3
+  name Keymix6
+  note_font "Bitstream Vera Sans"
+  xpos 1113
+  ypos -61
+ }
+ Dot {
+  name Dot26
+  label rgbPostHueProcessR
+  xpos 1147
+  ypos -16
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply29
+  note_font "Bitstream Vera Sans"
+  xpos 1118
+  ypos 233
+ }
+push $N4c95d800
+push $N9d88c800
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle31
+  label "\[value in]-->\[value out]"
+  note_font "Bitstream Vera Sans"
+  xpos 713
+  ypos 130
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply22
+  note_font "Bitstream Vera Sans"
+  xpos 713
+  ypos 203
+ }
+push $N9d88c800
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.alpha 0 3 rgba.red 0 0 rgba.alpha 0 3 rgba.green 0 1"
+  name Shuffle20
+  xpos 695
+  ypos -78
+ }
+push $N9d88c800
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle21
+  xpos 723
+  ypos -220
+ }
+push $N9d88cc00
+ Group {
+  name tio_preserving_tonecurve_lut1D5
+  label B_LUT
+  xpos 775
+  ypos -279
+  addUserKnob {20 User}
+  addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
+  addUserKnob {1 ctlLutString}
+  ctlLutString "\{0.0000002540, 0.0000002540\},\{0.0000008970, 0.0000008970\},\{0.0000031703, 0.0000031703\},\n\{0.0001645508, 0.0001645508\},\{0.0026896762, 0.0026896762\},\{0.0347936508, 0.0347936508\},\n\{0.2590001407, 0.2590001407\},\{1.0000000000, 1.0000000000\},\{3.9856577231, 1.2603756379\},\n\{13.9990962657, 2.2187072372\},\{49.1699764178, 3.1024157749\}"
+  addUserKnob {22 createCurve l "create Curve" T "node = nuke.thisNode()\nlutKnob = node.knob('lut')\nnode.knobs()\n\ncurveString = node.knob('ctlLutString').getValue()\n\n\ncurveString =  curveString.replace('\\n','')\ncurveBlocks = curveString.split('\},\{')\ncurveBlocks = \[x.replace('\}','') for x in curveBlocks]\ncurveBlocks = \[x.replace('\{','') for x in curveBlocks]\ncurveBlocks = \[x for x in curveBlocks if x != '']\ncurveBlocks = \[x.split(',') for x in curveBlocks]\n\n\n\nfor key in curveBlocks:\n    lutKnob.setValueAt(float(key\[1]),float(key\[0]))\n" +STARTLINE}
+ }
+  BackdropNode {
+   inputs 0
+   name BackdropNode2
+   tile_color 0x71c67100
+   label ratio_preserving_tonecurve_lut1D
+   note_font_size 42
+   xpos 525
+   ypos 71
+   bdwidth 177
+   bdheight 266
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 612
+   ypos 111
+  }
+  Dot {
+   name Dot2
+   xpos 646
+   ypos 151
+  }
+set N3668a400 [stack 0]
+push $N3668a400
+  Expression {
+   temp_name0 NTH_POWER
+   temp_expr0 2.0
+   temp_name1 normRGB
+   temp_expr1 "( pow(r,NTH_POWER) + pow(g,NTH_POWER) + pow(b,NTH_POWER) ) / ( pow(r,NTH_POWER-1) + pow(g,NTH_POWER-1) + pow(b,NTH_POWER-1) )"
+   channel0 rgba
+   expr0 max(normRGB,.000000000001)
+   name Expression4
+   selected true
+   xpos 574
+   ypos 194
+  }
+set N3668a000 [stack 0]
+  ColorLookup {
+   lut {master {curve L x2.540000139e-07 2.54e-07 x8.970000067e-07 8.97e-07 x3.170300033e-06 3.1703e-06 x0.0001645508019 0.0001645508 x0.002689676126 0.0026896762 x0.03479365259 0.0347936508 x0.2590001523 0.2590001407 x1 1 x3.985657692 1.260375638 x13.99909592 2.218707237 x49.16997528 3.102415775}
+     red {}
+     green {}
+     blue {}
+     alpha {}}
+   name R_LUT
+   xpos 535
+   ypos 230
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply2
+   xpos 621
+   ypos 255
+  }
+push $N3668a000
+  Merge2 {
+   inputs 2
+   operation divide
+   name Multiply3
+   xpos 597
+   ypos 306
+  }
+  Output {
+   name Output1
+   xpos 597
+   ypos 430
+  }
+ end_group
+ Dot {
+  name Dot20
+  xpos 809
+  ypos -202
+ }
+push $N9d88cc00
+ Dot {
+  name Dot21
+  xpos 917
+  ypos -328
+ }
+set N36688800 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge5
+  xpos 775
+  ypos -176
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply4
+  xpos 775
+  ypos -142
+ }
+push $N36688800
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus5
+  xpos 775
+  ypos -111
+ }
+push $N36688800
+ Keymix {
+  inputs 3
+  name Keymix5
+  note_font "Bitstream Vera Sans"
+  xpos 810
+  ypos -57
+ }
+ Dot {
+  name Dot22
+  label rgbPostHueProcessR
+  xpos 844
+  ypos -12
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply28
+  note_font "Bitstream Vera Sans"
+  xpos 806
+  ypos 239
+ }
+push $N4c95d800
+push $N4c95fc00
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle30
+  label "\[value in]-->\[value out]"
+  note_font "Bitstream Vera Sans"
+  xpos 434
+  ypos 133
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply21
+  note_font "Bitstream Vera Sans"
+  xpos 434
+  ypos 213
+ }
+push $N4c95fc00
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.alpha 0 3 rgba.red 0 0 rgba.alpha 0 3 rgba.green 0 1"
+  name Shuffle12
+  xpos 392
+  ypos -80
+ }
+push $N4c95fc00
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle19
+  xpos 420
+  ypos -222
+ }
+push $N9d88c400
+ Group {
+  name tio_preserving_tonecurve_lut1D4
+  label C_LUT
+  xpos 472
+  ypos -281
+  addUserKnob {20 User}
+  addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
+  addUserKnob {1 ctlLutString}
+  ctlLutString "\{0.0000001912, 0.0000001912\},\{0.0000006753, 0.0000006753\},\{0.0000023862, 0.0000023862\},\n\{0.0001238797, 0.0001238797\},\{0.0261938900, 0.0261938900\},\{0.7528006753, 0.7528006753\},\n\{3.0002676549, 3.0002676549\},\{10.5390144507, 10.5390144507\},\{37.0168961033, 37.0168961033\}"
+  addUserKnob {22 createCurve l "create Curve" T "node = nuke.thisNode()\nlutKnob = node.knob('lut')\nnode.knobs()\n\ncurveString = node.knob('ctlLutString').getValue()\n\n\ncurveString =  curveString.replace('\\n','')\ncurveBlocks = curveString.split('\},\{')\ncurveBlocks = \[x.replace('\}','') for x in curveBlocks]\ncurveBlocks = \[x.replace('\{','') for x in curveBlocks]\ncurveBlocks = \[x for x in curveBlocks if x != '']\ncurveBlocks = \[x.split(',') for x in curveBlocks]\n\n\n\nfor key in curveBlocks:\n    lutKnob.setValueAt(float(key\[1]),float(key\[0]))\n" +STARTLINE}
+ }
+  BackdropNode {
+   inputs 0
+   name BackdropNode2
+   tile_color 0x71c67100
+   label ratio_preserving_tonecurve_lut1D
+   note_font_size 42
+   xpos 525
+   ypos 71
+   bdwidth 177
+   bdheight 266
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 612
+   ypos 111
+  }
+  Dot {
+   name Dot2
+   xpos 646
+   ypos 151
+  }
+set N30545000 [stack 0]
+push $N30545000
+  Expression {
+   temp_name0 NTH_POWER
+   temp_expr0 2.0
+   temp_name1 normRGB
+   temp_expr1 "( pow(r,NTH_POWER) + pow(g,NTH_POWER) + pow(b,NTH_POWER) ) / ( pow(r,NTH_POWER-1) + pow(g,NTH_POWER-1) + pow(b,NTH_POWER-1) )"
+   channel0 rgba
+   expr0 max(normRGB,.000000000001)
+   name Expression4
+   selected true
+   xpos 574
+   ypos 194
+  }
+set N30544c00 [stack 0]
+  ColorLookup {
+   lut {master {curve L x1.912000016e-07 1.912e-07 x6.752999866e-07 6.753e-07 x2.386200094e-06 2.3862e-06 x0.0001238796976 0.0001238797 x0.02619389072 0.02619389 x0.752800703 0.7528006753 x3.000267744 3.000267655 x10.53901482 10.53901445 x37.01689529 37.0168961}
+     red {}
+     green {}
+     blue {}
+     alpha {}}
+   name R_LUT
+   xpos 535
+   ypos 230
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply2
+   xpos 621
+   ypos 255
+  }
+push $N30544c00
+  Merge2 {
+   inputs 2
+   operation divide
+   name Multiply3
+   xpos 597
+   ypos 306
+  }
+  Output {
+   name Output1
+   xpos 597
+   ypos 430
+  }
+ end_group
+ Dot {
+  name Dot16
+  xpos 506
+  ypos -204
+ }
+push $N9d88c400
+ Dot {
+  name Dot17
+  xpos 614
+  ypos -330
+ }
+set Nbd4c3000 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge4
+  xpos 472
+  ypos -178
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply3
+  xpos 472
+  ypos -144
+ }
+push $Nbd4c3000
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus4
+  xpos 472
+  ypos -113
+ }
+push $Nbd4c3000
+ Keymix {
+  inputs 3
+  name Keymix4
+  note_font "Bitstream Vera Sans"
+  xpos 507
+  ypos -59
+ }
+ Dot {
+  name Dot18
+  label rgbPostHueProcessR
+  xpos 541
+  ypos -14
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply27
+  note_font "Bitstream Vera Sans"
+  xpos 507
+  ypos 242
+ }
+push $N4c95d800
+push $N4c95f400
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle29
+  label "\[value in]-->\[value out]"
+  note_font "Bitstream Vera Sans"
+  xpos 145
+  ypos 150
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply20
+  note_font "Bitstream Vera Sans"
+  xpos 145
+  ypos 212
+ }
+push $N4c95f400
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.alpha 0 3 rgba.red 0 0 rgba.alpha 0 3 rgba.green 0 1"
+  name Shuffle10
+  xpos 89
+  ypos -76
+ }
+push $N4c95f400
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle11
+  xpos 117
+  ypos -218
+ }
+push $N4c95f800
+ Group {
+  name tio_preserving_tonecurve_lut1D3
+  label G_LUT
+  xpos 169
+  ypos -277
+  addUserKnob {20 User}
+  addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
+  addUserKnob {1 ctlLutString}
+  ctlLutString "\{0.0000001912, 0.0000001912\},\{0.0000006753, 0.0000006753\},\{0.0000023862, 0.0000023862\},\n\{0.0001238797, 0.0001238797\},\{0.0261938900, 0.0261938900\},\{0.7528006753, 0.7528006753\},\n\{3.0002676549, 3.0002676549\},\{10.5390144507, 10.5390144507\},\{37.0168961033, 37.0168961033\} "
+  addUserKnob {22 createCurve l "create Curve" T "node = nuke.thisNode()\nlutKnob = node.knob('lut')\nnode.knobs()\n\ncurveString = node.knob('ctlLutString').getValue()\n\n\ncurveString =  curveString.replace('\\n','')\ncurveBlocks = curveString.split('\},\{')\ncurveBlocks = \[x.replace('\}','') for x in curveBlocks]\ncurveBlocks = \[x.replace('\{','') for x in curveBlocks]\ncurveBlocks = \[x for x in curveBlocks if x != '']\ncurveBlocks = \[x.split(',') for x in curveBlocks]\n\n\n\nfor key in curveBlocks:\n    lutKnob.setValueAt(float(key\[1]),float(key\[0]))\n" +STARTLINE}
+ }
+  BackdropNode {
+   inputs 0
+   name BackdropNode2
+   tile_color 0x71c67100
+   label ratio_preserving_tonecurve_lut1D
+   note_font_size 42
+   xpos 525
+   ypos 71
+   bdwidth 177
+   bdheight 266
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 612
+   ypos 111
+  }
+  Dot {
+   name Dot2
+   xpos 646
+   ypos 151
+  }
+set N58093800 [stack 0]
+push $N58093800
+  Expression {
+   temp_name0 NTH_POWER
+   temp_expr0 2.0
+   temp_name1 normRGB
+   temp_expr1 "( pow(r,NTH_POWER) + pow(g,NTH_POWER) + pow(b,NTH_POWER) ) / ( pow(r,NTH_POWER-1) + pow(g,NTH_POWER-1) + pow(b,NTH_POWER-1) )"
+   channel0 rgba
+   expr0 max(normRGB,.000000000001)
+   name Expression4
+   selected true
+   xpos 574
+   ypos 194
+  }
+set N58093400 [stack 0]
+  ColorLookup {
+   lut {master {curve L x1.912000016e-07 1.912e-07 x6.752999866e-07 6.753e-07 x2.386200094e-06 2.3862e-06 x0.0001238796976 0.0001238797 x0.02619389072 0.02619389 x0.752800703 0.7528006753 x3.000267744 3.000267655 x10.53901482 10.53901445 x37.01689529 37.0168961}
+     red {}
+     green {}
+     blue {}
+     alpha {}}
+   name R_LUT
+   xpos 535
+   ypos 230
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply2
+   xpos 621
+   ypos 255
+  }
+push $N58093400
+  Merge2 {
+   inputs 2
+   operation divide
+   name Multiply3
+   xpos 597
+   ypos 306
+  }
+  Output {
+   name Output1
+   xpos 597
+   ypos 430
+  }
+ end_group
+ Dot {
+  name Dot12
+  xpos 203
+  ypos -200
+ }
+push $N4c95f800
+ Dot {
+  name Dot13
+  xpos 311
+  ypos -326
+ }
+set N58091c00 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge3
+  xpos 169
+  ypos -174
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply2
+  xpos 169
+  ypos -140
+ }
+push $N58091c00
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus3
+  xpos 169
+  ypos -109
+ }
+push $N58091c00
+ Keymix {
+  inputs 3
+  name Keymix3
+  note_font "Bitstream Vera Sans"
+  xpos 204
+  ypos -55
+ }
+ Dot {
+  name Dot14
+  label rgbPostHueProcessR
+  xpos 238
+  ypos -10
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply26
+  note_font "Bitstream Vera Sans"
+  xpos 222
+  ypos 249
+ }
+push 0
+push $N4c95d800
+push $N4c95ec00
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle27
+  label "\[value in]-->\[value out]"
+  note_font "Bitstream Vera Sans"
+  xpos -485
+  ypos 122
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply18
+  note_font "Bitstream Vera Sans"
+  xpos -495
+  ypos 209
+ }
+push $N4c95ec00
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.alpha 0 3 rgba.red 0 0 rgba.alpha 0 3 rgba.green 0 1"
+  name Shuffle24
+  xpos -552
+  ypos -73
+ }
+push $N4c95ec00
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle7
+  xpos -504
+  ypos -206
+ }
+push $N4c95f000
+ ColorMatrix {
+  matrix {
+      {1 0 0}
+      {-0.1 1.2 -0.1}
+      {-0.1 -0.1 1.2}
+    }
+  name R_MTX_1
+  label R
+  xpos -444
+  ypos -312
+ }
+ Group {
+  name tio_preserving_tonecurve_lut1D7
+  label R_LUT
+  xpos -444
+  ypos -254
+  addUserKnob {20 User}
+  addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
+  addUserKnob {1 ctlLutString}
+ }
+  BackdropNode {
+   inputs 0
+   name BackdropNode2
+   tile_color 0x71c67100
+   label ratio_preserving_tonecurve_lut1D
+   note_font_size 42
+   xpos 525
+   ypos 71
+   bdwidth 177
+   bdheight 266
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 612
+   ypos 111
+  }
+  Dot {
+   name Dot2
+   xpos 646
+   ypos 151
+  }
+set N5fbae000 [stack 0]
+push $N5fbae000
+  Expression {
+   temp_name0 NTH_POWER
+   temp_expr0 2.0
+   temp_name1 normRGB
+   temp_expr1 "( pow(r,NTH_POWER) + pow(g,NTH_POWER) + pow(b,NTH_POWER) ) / ( pow(r,NTH_POWER-1) + pow(g,NTH_POWER-1) + pow(b,NTH_POWER-1) )"
+   channel0 rgba
+   expr0 max(normRGB,.000000000001)
+   name Expression4
+   selected true
+   xpos 574
+   ypos 194
+  }
+set N5fbadc00 [stack 0]
+  ColorLookup {
+   lut {master {curve L x2.540000139e-07 2.54e-07 x8.970000067e-07 8.97e-07 x3.170300033e-06 3.9912e-06 x0.0001645510056 0.0002926173 x0.002689680085 0.0053666096 x0.03479370102 0.0694224602 x0.2590000033 0.2590001407 x1 0.5623413252 x3.985660076 2.821629583 x13.99909973 13.99909627 x49.16999817 49.16997642}
+     red {}
+     green {}
+     blue {}
+     alpha {}}
+   name R_LUT
+   xpos 535
+   ypos 230
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply2
+   xpos 621
+   ypos 255
+  }
+push $N5fbadc00
+  Merge2 {
+   inputs 2
+   operation divide
+   name Multiply3
+   xpos 597
+   ypos 306
+  }
+  Output {
+   name Output1
+   xpos 597
+   ypos 430
+  }
+ end_group
+ Dot {
+  name Dot6
+  xpos -410
+  ypos -199
+ }
+push $N4c95f000
+ Dot {
+  name Dot3
+  xpos -302
+  ypos -325
+ }
+set N5fbac400 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -444
+  ypos -173
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply
+  xpos -444
+  ypos -139
+ }
+push $N5fbac400
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus1
+  xpos -444
+  ypos -108
+ }
+push $N5fbac400
+ Keymix {
+  inputs 3
+  name Keymix1
+  note_font "Bitstream Vera Sans"
+  xpos -409
+  ypos -54
+ }
+ Dot {
+  name Dot4
+  label rgbPostHueProcessR
+  xpos -375
+  ypos -9
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply24
+  note_font "Bitstream Vera Sans"
+  xpos -409
+  ypos 259
+ }
+push $N4c95d800
+push $N4c95e400
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle28
+  label "\[value in]-->\[value out]"
+  note_font "Bitstream Vera Sans"
+  xpos -175
+  ypos 133
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply19
+  note_font "Bitstream Vera Sans"
+  xpos -175
+  ypos 201
+ }
+push $N4c95e400
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.alpha 0 3 rgba.red 0 0 rgba.alpha 0 3 rgba.green 0 1"
+  name Shuffle8
+  xpos -247
+  ypos -75
+ }
+push $N4c95e400
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle9
+  xpos -191
+  ypos -219
+ }
+push $N4c95e800
+ Group {
+  name tio_preserving_tonecurve_lut1D1
+  label Y_LUT
+  xpos -139
+  ypos -278
+  addUserKnob {20 User}
+  addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
+  addUserKnob {1 ctlLutString}
+  ctlLutString "\{0.0000002358, 0.0000002358\},\{0.0000008327, 0.0000008327\},\{0.0000029424, 0.0000029424\},\n\{0.0001527566, 0.0001527566\},\{0.0322923760, 0.0406536927\},\{0.9282607769, 1.0540713276\},\n\{3.6994741752, 5.3296660801\},\{12.9957096566, 16.0657128371\},\{45.6457134961, 59.4155333542\}"
+  addUserKnob {22 createCurve l "create Curve" T "node = nuke.thisNode()\nlutKnob = node.knob('lut')\nnode.knobs()\n\ncurveString = node.knob('ctlLutString').getValue()\n\n\ncurveString =  curveString.replace('\\n','')\ncurveBlocks = curveString.split('\},\{')\ncurveBlocks = \[x.replace('\}','') for x in curveBlocks]\ncurveBlocks = \[x.replace('\{','') for x in curveBlocks]\ncurveBlocks = \[x for x in curveBlocks if x != '']\ncurveBlocks = \[x.split(',') for x in curveBlocks]\n\n\n\nfor key in curveBlocks:\n    lutKnob.setValueAt(float(key\[1]),float(key\[0]))\n" +STARTLINE}
+ }
+  BackdropNode {
+   inputs 0
+   name BackdropNode2
+   tile_color 0x71c67100
+   label ratio_preserving_tonecurve_lut1D
+   note_font_size 42
+   xpos 525
+   ypos 71
+   bdwidth 177
+   bdheight 266
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 612
+   ypos 111
+  }
+  Dot {
+   name Dot2
+   xpos 646
+   ypos 151
+  }
+set N7e1c0c00 [stack 0]
+push $N7e1c0c00
+  Expression {
+   temp_name0 NTH_POWER
+   temp_expr0 2.0
+   temp_name1 normRGB
+   temp_expr1 "( pow(r,NTH_POWER) + pow(g,NTH_POWER) + pow(b,NTH_POWER) ) / ( pow(r,NTH_POWER-1) + pow(g,NTH_POWER-1) + pow(b,NTH_POWER-1) )"
+   channel0 rgba
+   expr0 max(normRGB,.000000000001)
+   name Expression4
+   selected true
+   xpos 574
+   ypos 194
+  }
+set N7e1c0800 [stack 0]
+  ColorLookup {
+   lut {master {curve L x2.358000017e-07 2.358e-07 x8.326999819e-07 8.327e-07 x2.942399988e-06 2.9424e-06 x0.0001527566055 0.0001527566 x0.0322923772 0.0406536927 x0.9282608032 1.054071328 x3.699474096 5.32966608 x12.99570942 16.06571284 x45.64571381 59.41553335}
+     red {}
+     green {}
+     blue {}
+     alpha {}}
+   name R_LUT
+   xpos 535
+   ypos 230
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply2
+   xpos 621
+   ypos 255
+  }
+push $N7e1c0800
+  Merge2 {
+   inputs 2
+   operation divide
+   name Multiply3
+   xpos 597
+   ypos 306
+  }
+  Output {
+   name Output1
+   xpos 597
+   ypos 430
+  }
+ end_group
+ Dot {
+  name Dot8
+  xpos -105
+  ypos -201
+ }
+push $N4c95e800
+ Dot {
+  name Dot9
+  xpos 3
+  ypos -327
+ }
+set N8b2cac00 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge2
+  xpos -139
+  ypos -175
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply1
+  xpos -139
+  ypos -141
+ }
+push $N8b2cac00
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus2
+  xpos -139
+  ypos -110
+ }
+push $N8b2cac00
+ Keymix {
+  inputs 3
+  name Keymix2
+  note_font "Bitstream Vera Sans"
+  xpos -104
+  ypos -56
+ }
+ Dot {
+  name Dot10
+  label rgbPostHueProcessR
+  xpos -70
+  ypos -11
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply25
+  note_font "Bitstream Vera Sans"
+  xpos -96
+  ypos 254
+ }
+ Merge2 {
+  inputs 6+1
+  operation plus
+  name Plus10
+  note_font "Bitstream Vera Sans"
+  xpos 222
+  ypos 461
+ }
+push $N9d88e000
+ Keymix {
+  inputs 3
+  name Keymix7
+  label rgbPostHueProcess
+  note_font "Bitstream Vera Sans"
+  xpos 222
+  ypos 556
+ }
+ ColorMatrix {
+  matrix {
+      {{"(1.0 - sat) * rgb2Y.r + sat"} {"(1.0 - sat) * rgb2Y.r"} {"(1.0 - sat) * rgb2Y.r"}}
+      {{"(1.0 - sat) * rgb2Y.g"} {"(1.0 - sat) * rgb2Y.g + sat"} {"(1.0 - sat) * rgb2Y.g"}}
+      {{"(1.0 - sat) * rgb2Y.b"} {"(1.0 - sat) * rgb2Y.b"} {"(1.0 - sat) * rgb2Y.b + sat"}}
+    }
+  name ColorMatrix2
+  note_font "Bitstream Vera Sans"
+  xpos 222
+  ypos 626
+  addUserKnob {20 User}
+  addUserKnob {18 rgb2Y}
+  rgb2Y {{1/3} {1/3} {1/3}}
+  addUserKnob {6 rgb2Y_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {7 sat}
+  sat 0.86
+ }
+ Clamp {
+  maximum_enable false
+  name Clamp3
+  note_font "Bitstream Vera Sans"
+  xpos 222
+  ypos 682
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  note_font "Bitstream Vera Sans"
+  xpos 222
+  ypos 766
+ }
+ Dot {
+  name Dot32
+  note_font "Bitstream Vera Sans"
+  xpos 256
+  ypos 835
+ }
+ Output {
+  name Output1
+  xpos 211
+  ypos 944
+ }
+end_group
