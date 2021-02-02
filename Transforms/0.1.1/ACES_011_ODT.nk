@@ -5,7 +5,7 @@ Group {
  name ACES_011_ODT
  selected true
  xpos 2987
- ypos -14
+ ypos -19
  addUserKnob {20 User}
  addUserKnob {6 rdt_shaper_fwd +STARTLINE}
  rdt_shaper_fwd true
@@ -235,6 +235,7 @@ push $N189b7000
   }
  end_group
 set N9c77f200 [stack 0]
+push $N9c77f200
 push $Nae21400
  Merge2 {
   inputs 2
@@ -912,13 +913,6 @@ push $Nb3273000
   ypos 190
  }
 set N23c43200 [stack 0]
- Dot {
-  name Dot2
-  xpos 774
-  ypos 381
- }
-push $N9c77f200
-push $N23c43200
  Copy {
   inputs 2
   from0 rgba.red
@@ -990,12 +984,19 @@ push $N9c77f200
   xpos 604
   ypos 392
  }
+push $N23c43200
+ Dot {
+  name Dot2
+  xpos 774
+  ypos 381
+ }
  Switch {
   inputs 2
   which {{parent.highlight_desat}}
   name Switch2
-  xpos 604
-  ypos 437
+  selected true
+  xpos 608
+  ypos 436
  }
 set N23c40f00 [stack 0]
  Colorspace {
