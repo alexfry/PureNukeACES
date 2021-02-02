@@ -1,0 +1,1044 @@
+set cut_paste_input [stack 0]
+version 12.2 v4
+push $cut_paste_input
+Group {
+ name ACES_011_ODT
+ selected true
+ xpos 2987
+ ypos -14
+ addUserKnob {20 User}
+ addUserKnob {6 rdt_shaper_fwd +STARTLINE}
+ rdt_shaper_fwd true
+ addUserKnob {6 ratio_preserving_tone_curve l "ratio-preserving tone-curve" +STARTLINE}
+ ratio_preserving_tone_curve true
+ addUserKnob {6 highlight_desat +STARTLINE}
+ highlight_desat true
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 colorspace_out l out T Colorspace3.colorspace_out}
+ addUserKnob {41 illuminant_out l "" -STARTLINE T Colorspace3.illuminant_out}
+ addUserKnob {41 primary_out l "" -STARTLINE T Colorspace3.primary_out}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 501
+  ypos -58
+ }
+ Dot {
+  name Dot35
+  xpos 535
+  ypos -15
+ }
+set Nae21800 [stack 0]
+ Expression {
+  channel0 rgb
+  expr0 "max(max( max( r, g), b),.000000001)"
+  name Expression10
+  label "normRGB\n"
+  note_font "Bitstream Vera Sans"
+  xpos 401
+  ypos 39
+ }
+set Nae21400 [stack 0]
+ Group {
+  name rdt_shaper_fwd
+  note_font "Bitstream Vera Sans"
+  xpos 301
+  ypos 70
+  disable {{1-parent.rdt_shaper_fwd}}
+  addUserKnob {20 User}
+  addUserKnob {7 ODT_COEFS0}
+  ODT_COEFS0 -0.007
+  addUserKnob {7 ODT_COEFS1}
+  ODT_COEFS1 -0.00441
+  addUserKnob {7 ODT_COEFS2}
+  ODT_COEFS2 0.0227
+  addUserKnob {7 ODT_COEFS3}
+  ODT_COEFS3 0.217
+  addUserKnob {7 ODT_COEFS4}
+  ODT_COEFS4 0.617
+  addUserKnob {7 ODT_COEFS5}
+  ODT_COEFS5 1.17
+  addUserKnob {7 ODT_COEFS6}
+  ODT_COEFS6 1.79
+  addUserKnob {7 ODT_COEFS7}
+  ODT_COEFS7 2.38
+  addUserKnob {7 ODT_COEFS8}
+  ODT_COEFS8 2.88
+  addUserKnob {7 ODT_COEFS9}
+  ODT_COEFS9 3.489
+  addUserKnob {7 ODT_COEFS10}
+  ODT_COEFS10 4
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_FLARE}
+  ODT_FLARE 0.0001
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_COEFS11}
+  ODT_COEFS11 {{"ODT_COEFS10 + 2. * ( 4. - ODT_COEFS10)"}}
+  addUserKnob {26 ""}
+  addUserKnob {3 ODT_KNOT_LEN}
+  ODT_KNOT_LEN 11
+  addUserKnob {7 ODT_KNOT_START}
+  ODT_KNOT_START -0.9
+  addUserKnob {7 ODT_KNOT_END}
+  ODT_KNOT_END 5
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_POW}
+  ODT_KNOT_POW {{"1. / 1.3"}}
+  addUserKnob {7 ODT_OFFS}
+  ODT_OFFS {{ODT_KNOT_START}}
+  addUserKnob {7 ODT_SC}
+  ODT_SC {{"ODT_KNOT_END - ODT_KNOT_START"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_DENS_0}
+  ODT_KNOT_DENS_0 {{"(ODT_COEFS0 + ODT_COEFS1) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_1}
+  ODT_KNOT_DENS_1 {{"(ODT_COEFS1 + ODT_COEFS2) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_2}
+  ODT_KNOT_DENS_2 {{"(ODT_COEFS2 + ODT_COEFS3) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_3}
+  ODT_KNOT_DENS_3 {{"(ODT_COEFS3 + ODT_COEFS4) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_4}
+  ODT_KNOT_DENS_4 {{"(ODT_COEFS4 + ODT_COEFS5) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_5}
+  ODT_KNOT_DENS_5 {{"(ODT_COEFS5 + ODT_COEFS6) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_6}
+  ODT_KNOT_DENS_6 {{"(ODT_COEFS6 + ODT_COEFS7) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_7}
+  ODT_KNOT_DENS_7 {{"(ODT_COEFS7 + ODT_COEFS8) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_8}
+  ODT_KNOT_DENS_8 {{"(ODT_COEFS8 + ODT_COEFS9) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_9}
+  ODT_KNOT_DENS_9 {{"(ODT_COEFS9 + ODT_COEFS10) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_10}
+  ODT_KNOT_DENS_10 {{"(ODT_COEFS10 + ODT_COEFS11) / 2.0"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_LIGHT_SLOPE}
+  ODT_LIGHT_SLOPE 0.023
+  addUserKnob {7 ODT_CROSSOVER}
+  ODT_CROSSOVER {{pow(10,-ODT_KNOT_END)}}
+  addUserKnob {7 ODT_REV_CROSSOVER}
+  ODT_REV_CROSSOVER {{"pow(10, -ODT_KNOT_DENS_10) - ODT_FLARE"}}
+  addUserKnob {7 ODT_DARK_SLOPE}
+  ODT_DARK_SLOPE {{"ODT_REV_CROSSOVER / ODT_CROSSOVER"}}
+ }
+  Expression {
+   inputs 0
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]"
+   temp_name2 j
+   temp_expr2 knot_coord
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 t
+   name Expression2
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos -81
+   ypos 54
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 0
+  }
+set Nae20c00 [stack 0]
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 j
+   name Expression1
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 0
+   ypos 150
+  }
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0}
+       {0.5 0.5 0}
+     }
+   name M
+   xpos 51
+   ypos 212
+  }
+push $Nae20c00
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 "t * t"
+   expr1 t
+   expr2 1
+   expr3 j
+   name Expression3
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 128
+   ypos 151
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply
+   xpos 128
+   ypos 249
+  }
+  Expression {
+   channel0 rgb
+   expr0 r+g+b
+   name Expression4
+   xpos 128
+   ypos 273
+  }
+  Expression {
+   channel0 rgba
+   expr0 "pow(10, -r) - \[value parent.ODT_FLARE]"
+   name Expression5
+   xpos 128
+   ypos 308
+  }
+set N189b7000 [stack 0]
+  Viewer {
+   frame_range 97-287
+   colour_sample_bbox {0.2939999998 0.1059999987 0.2949999869 0.1070000008}
+   name Viewer1
+   xpos 278
+   ypos 344
+  }
+push $N189b7000
+  Output {
+   name Output1
+   selected true
+   xpos 128
+   ypos 371
+  }
+ end_group
+set N9c77f200 [stack 0]
+push $Nae21400
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge7
+  xpos 401
+  ypos 104
+ }
+push $Nae21800
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply24
+  label "Apply ratio-preserving tone-curve\nrgbOut"
+  xpos 501
+  ypos 139
+ }
+push $Nae21800
+ Dot {
+  name Dot1
+  xpos 805
+  ypos -3
+ }
+set N1a603000 [stack 0]
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.blue 0 2 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
+  name Shuffle3
+  xpos 854
+  ypos 47
+ }
+ Group {
+  name rdt_shaper_fwd3
+  note_font "Bitstream Vera Sans"
+  xpos 854
+  ypos 71
+  disable {{1-parent.rdt_shaper_fwd}}
+  addUserKnob {20 User}
+  addUserKnob {7 ODT_COEFS0}
+  ODT_COEFS0 -0.007
+  addUserKnob {7 ODT_COEFS1}
+  ODT_COEFS1 -0.00441
+  addUserKnob {7 ODT_COEFS2}
+  ODT_COEFS2 0.0227
+  addUserKnob {7 ODT_COEFS3}
+  ODT_COEFS3 0.217
+  addUserKnob {7 ODT_COEFS4}
+  ODT_COEFS4 0.617
+  addUserKnob {7 ODT_COEFS5}
+  ODT_COEFS5 1.17
+  addUserKnob {7 ODT_COEFS6}
+  ODT_COEFS6 1.79
+  addUserKnob {7 ODT_COEFS7}
+  ODT_COEFS7 2.38
+  addUserKnob {7 ODT_COEFS8}
+  ODT_COEFS8 2.88
+  addUserKnob {7 ODT_COEFS9}
+  ODT_COEFS9 3.489
+  addUserKnob {7 ODT_COEFS10}
+  ODT_COEFS10 4
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_FLARE}
+  ODT_FLARE 0.0001
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_COEFS11}
+  ODT_COEFS11 {{"ODT_COEFS10 + 2. * ( 4. - ODT_COEFS10)"}}
+  addUserKnob {26 ""}
+  addUserKnob {3 ODT_KNOT_LEN}
+  ODT_KNOT_LEN 11
+  addUserKnob {7 ODT_KNOT_START}
+  ODT_KNOT_START -0.9
+  addUserKnob {7 ODT_KNOT_END}
+  ODT_KNOT_END 5
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_POW}
+  ODT_KNOT_POW {{"1. / 1.3"}}
+  addUserKnob {7 ODT_OFFS}
+  ODT_OFFS {{ODT_KNOT_START}}
+  addUserKnob {7 ODT_SC}
+  ODT_SC {{"ODT_KNOT_END - ODT_KNOT_START"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_DENS_0}
+  ODT_KNOT_DENS_0 {{"(ODT_COEFS0 + ODT_COEFS1) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_1}
+  ODT_KNOT_DENS_1 {{"(ODT_COEFS1 + ODT_COEFS2) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_2}
+  ODT_KNOT_DENS_2 {{"(ODT_COEFS2 + ODT_COEFS3) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_3}
+  ODT_KNOT_DENS_3 {{"(ODT_COEFS3 + ODT_COEFS4) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_4}
+  ODT_KNOT_DENS_4 {{"(ODT_COEFS4 + ODT_COEFS5) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_5}
+  ODT_KNOT_DENS_5 {{"(ODT_COEFS5 + ODT_COEFS6) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_6}
+  ODT_KNOT_DENS_6 {{"(ODT_COEFS6 + ODT_COEFS7) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_7}
+  ODT_KNOT_DENS_7 {{"(ODT_COEFS7 + ODT_COEFS8) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_8}
+  ODT_KNOT_DENS_8 {{"(ODT_COEFS8 + ODT_COEFS9) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_9}
+  ODT_KNOT_DENS_9 {{"(ODT_COEFS9 + ODT_COEFS10) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_10}
+  ODT_KNOT_DENS_10 {{"(ODT_COEFS10 + ODT_COEFS11) / 2.0"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_LIGHT_SLOPE}
+  ODT_LIGHT_SLOPE 0.023
+  addUserKnob {7 ODT_CROSSOVER}
+  ODT_CROSSOVER {{pow(10,-ODT_KNOT_END)}}
+  addUserKnob {7 ODT_REV_CROSSOVER}
+  ODT_REV_CROSSOVER {{"pow(10, -ODT_KNOT_DENS_10) - ODT_FLARE"}}
+  addUserKnob {7 ODT_DARK_SLOPE}
+  ODT_DARK_SLOPE {{"ODT_REV_CROSSOVER / ODT_CROSSOVER"}}
+ }
+  Expression {
+   inputs 0
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]"
+   temp_name2 j
+   temp_expr2 knot_coord
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 t
+   name Expression2
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos -81
+   ypos 54
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 0
+  }
+set Nb3272400 [stack 0]
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 j
+   name Expression1
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 0
+   ypos 150
+  }
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0}
+       {0.5 0.5 0}
+     }
+   name M
+   xpos 51
+   ypos 212
+  }
+push $Nb3272400
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 "t * t"
+   expr1 t
+   expr2 1
+   expr3 j
+   name Expression3
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 128
+   ypos 151
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply
+   xpos 128
+   ypos 249
+  }
+  Expression {
+   channel0 rgb
+   expr0 r+g+b
+   name Expression4
+   xpos 128
+   ypos 273
+  }
+  Expression {
+   channel0 rgba
+   expr0 "pow(10, -r) - \[value parent.ODT_FLARE]"
+   name Expression5
+   xpos 128
+   ypos 308
+  }
+set Nb3270c00 [stack 0]
+  Viewer {
+   frame_range 97-287
+   colour_sample_bbox {0.2939999998 0.1059999987 0.2949999869 0.1070000008}
+   name Viewer1
+   xpos 278
+   ypos 344
+  }
+push $Nb3270c00
+  Output {
+   name Output1
+   selected true
+   xpos 128
+   ypos 371
+  }
+ end_group
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 black -1 -1 rgba.red 0 0 black -1 -1 rgba.green 0 1 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
+  name Shuffle6
+  xpos 854
+  ypos 95
+ }
+push 0
+push $N1a603000
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.red 0 0 rgba.red 0 0 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
+  name Shuffle1
+  xpos 683
+  ypos 47
+ }
+ Group {
+  name rdt_shaper_fwd1
+  note_font "Bitstream Vera Sans"
+  xpos 683
+  ypos 71
+  disable {{1-parent.rdt_shaper_fwd}}
+  addUserKnob {20 User}
+  addUserKnob {7 ODT_COEFS0}
+  ODT_COEFS0 -0.007
+  addUserKnob {7 ODT_COEFS1}
+  ODT_COEFS1 -0.00441
+  addUserKnob {7 ODT_COEFS2}
+  ODT_COEFS2 0.0227
+  addUserKnob {7 ODT_COEFS3}
+  ODT_COEFS3 0.217
+  addUserKnob {7 ODT_COEFS4}
+  ODT_COEFS4 0.617
+  addUserKnob {7 ODT_COEFS5}
+  ODT_COEFS5 1.17
+  addUserKnob {7 ODT_COEFS6}
+  ODT_COEFS6 1.79
+  addUserKnob {7 ODT_COEFS7}
+  ODT_COEFS7 2.38
+  addUserKnob {7 ODT_COEFS8}
+  ODT_COEFS8 2.88
+  addUserKnob {7 ODT_COEFS9}
+  ODT_COEFS9 3.489
+  addUserKnob {7 ODT_COEFS10}
+  ODT_COEFS10 4
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_FLARE}
+  ODT_FLARE 0.0001
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_COEFS11}
+  ODT_COEFS11 {{"ODT_COEFS10 + 2. * ( 4. - ODT_COEFS10)"}}
+  addUserKnob {26 ""}
+  addUserKnob {3 ODT_KNOT_LEN}
+  ODT_KNOT_LEN 11
+  addUserKnob {7 ODT_KNOT_START}
+  ODT_KNOT_START -0.9
+  addUserKnob {7 ODT_KNOT_END}
+  ODT_KNOT_END 5
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_POW}
+  ODT_KNOT_POW {{"1. / 1.3"}}
+  addUserKnob {7 ODT_OFFS}
+  ODT_OFFS {{ODT_KNOT_START}}
+  addUserKnob {7 ODT_SC}
+  ODT_SC {{"ODT_KNOT_END - ODT_KNOT_START"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_DENS_0}
+  ODT_KNOT_DENS_0 {{"(ODT_COEFS0 + ODT_COEFS1) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_1}
+  ODT_KNOT_DENS_1 {{"(ODT_COEFS1 + ODT_COEFS2) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_2}
+  ODT_KNOT_DENS_2 {{"(ODT_COEFS2 + ODT_COEFS3) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_3}
+  ODT_KNOT_DENS_3 {{"(ODT_COEFS3 + ODT_COEFS4) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_4}
+  ODT_KNOT_DENS_4 {{"(ODT_COEFS4 + ODT_COEFS5) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_5}
+  ODT_KNOT_DENS_5 {{"(ODT_COEFS5 + ODT_COEFS6) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_6}
+  ODT_KNOT_DENS_6 {{"(ODT_COEFS6 + ODT_COEFS7) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_7}
+  ODT_KNOT_DENS_7 {{"(ODT_COEFS7 + ODT_COEFS8) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_8}
+  ODT_KNOT_DENS_8 {{"(ODT_COEFS8 + ODT_COEFS9) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_9}
+  ODT_KNOT_DENS_9 {{"(ODT_COEFS9 + ODT_COEFS10) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_10}
+  ODT_KNOT_DENS_10 {{"(ODT_COEFS10 + ODT_COEFS11) / 2.0"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_LIGHT_SLOPE}
+  ODT_LIGHT_SLOPE 0.023
+  addUserKnob {7 ODT_CROSSOVER}
+  ODT_CROSSOVER {{pow(10,-ODT_KNOT_END)}}
+  addUserKnob {7 ODT_REV_CROSSOVER}
+  ODT_REV_CROSSOVER {{"pow(10, -ODT_KNOT_DENS_10) - ODT_FLARE"}}
+  addUserKnob {7 ODT_DARK_SLOPE}
+  ODT_DARK_SLOPE {{"ODT_REV_CROSSOVER / ODT_CROSSOVER"}}
+ }
+  Expression {
+   inputs 0
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]"
+   temp_name2 j
+   temp_expr2 knot_coord
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 t
+   name Expression2
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos -81
+   ypos 54
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 0
+  }
+set N6cff400 [stack 0]
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 j
+   name Expression1
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 0
+   ypos 150
+  }
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0}
+       {0.5 0.5 0}
+     }
+   name M
+   xpos 51
+   ypos 212
+  }
+push $N6cff400
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 "t * t"
+   expr1 t
+   expr2 1
+   expr3 j
+   name Expression3
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 128
+   ypos 151
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply
+   xpos 128
+   ypos 249
+  }
+  Expression {
+   channel0 rgb
+   expr0 r+g+b
+   name Expression4
+   xpos 128
+   ypos 273
+  }
+  Expression {
+   channel0 rgba
+   expr0 "pow(10, -r) - \[value parent.ODT_FLARE]"
+   name Expression5
+   xpos 128
+   ypos 308
+  }
+set N6cfdc00 [stack 0]
+  Viewer {
+   frame_range 97-287
+   colour_sample_bbox {0.2939999998 0.1059999987 0.2949999869 0.1070000008}
+   name Viewer1
+   xpos 278
+   ypos 344
+  }
+push $N6cfdc00
+  Output {
+   name Output1
+   selected true
+   xpos 128
+   ypos 371
+  }
+ end_group
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.red 0 0 rgba.red 0 0 black -1 -1 rgba.green 0 1 black -1 -1 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
+  name Shuffle4
+  xpos 683
+  ypos 95
+ }
+push $N1a603000
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.green 0 1 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1 rgba.green 0 1 rgba.blue 0 2"
+  name Shuffle2
+  xpos 771
+  ypos 47
+ }
+ Group {
+  name rdt_shaper_fwd2
+  note_font "Bitstream Vera Sans"
+  xpos 771
+  ypos 71
+  disable {{1-parent.rdt_shaper_fwd}}
+  addUserKnob {20 User}
+  addUserKnob {7 ODT_COEFS0}
+  ODT_COEFS0 -0.007
+  addUserKnob {7 ODT_COEFS1}
+  ODT_COEFS1 -0.00441
+  addUserKnob {7 ODT_COEFS2}
+  ODT_COEFS2 0.0227
+  addUserKnob {7 ODT_COEFS3}
+  ODT_COEFS3 0.217
+  addUserKnob {7 ODT_COEFS4}
+  ODT_COEFS4 0.617
+  addUserKnob {7 ODT_COEFS5}
+  ODT_COEFS5 1.17
+  addUserKnob {7 ODT_COEFS6}
+  ODT_COEFS6 1.79
+  addUserKnob {7 ODT_COEFS7}
+  ODT_COEFS7 2.38
+  addUserKnob {7 ODT_COEFS8}
+  ODT_COEFS8 2.88
+  addUserKnob {7 ODT_COEFS9}
+  ODT_COEFS9 3.489
+  addUserKnob {7 ODT_COEFS10}
+  ODT_COEFS10 4
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_FLARE}
+  ODT_FLARE 0.0001
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_COEFS11}
+  ODT_COEFS11 {{"ODT_COEFS10 + 2. * ( 4. - ODT_COEFS10)"}}
+  addUserKnob {26 ""}
+  addUserKnob {3 ODT_KNOT_LEN}
+  ODT_KNOT_LEN 11
+  addUserKnob {7 ODT_KNOT_START}
+  ODT_KNOT_START -0.9
+  addUserKnob {7 ODT_KNOT_END}
+  ODT_KNOT_END 5
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_POW}
+  ODT_KNOT_POW {{"1. / 1.3"}}
+  addUserKnob {7 ODT_OFFS}
+  ODT_OFFS {{ODT_KNOT_START}}
+  addUserKnob {7 ODT_SC}
+  ODT_SC {{"ODT_KNOT_END - ODT_KNOT_START"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_KNOT_DENS_0}
+  ODT_KNOT_DENS_0 {{"(ODT_COEFS0 + ODT_COEFS1) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_1}
+  ODT_KNOT_DENS_1 {{"(ODT_COEFS1 + ODT_COEFS2) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_2}
+  ODT_KNOT_DENS_2 {{"(ODT_COEFS2 + ODT_COEFS3) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_3}
+  ODT_KNOT_DENS_3 {{"(ODT_COEFS3 + ODT_COEFS4) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_4}
+  ODT_KNOT_DENS_4 {{"(ODT_COEFS4 + ODT_COEFS5) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_5}
+  ODT_KNOT_DENS_5 {{"(ODT_COEFS5 + ODT_COEFS6) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_6}
+  ODT_KNOT_DENS_6 {{"(ODT_COEFS6 + ODT_COEFS7) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_7}
+  ODT_KNOT_DENS_7 {{"(ODT_COEFS7 + ODT_COEFS8) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_8}
+  ODT_KNOT_DENS_8 {{"(ODT_COEFS8 + ODT_COEFS9) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_9}
+  ODT_KNOT_DENS_9 {{"(ODT_COEFS9 + ODT_COEFS10) / 2.0"}}
+  addUserKnob {7 ODT_KNOT_DENS_10}
+  ODT_KNOT_DENS_10 {{"(ODT_COEFS10 + ODT_COEFS11) / 2.0"}}
+  addUserKnob {26 ""}
+  addUserKnob {7 ODT_LIGHT_SLOPE}
+  ODT_LIGHT_SLOPE 0.023
+  addUserKnob {7 ODT_CROSSOVER}
+  ODT_CROSSOVER {{pow(10,-ODT_KNOT_END)}}
+  addUserKnob {7 ODT_REV_CROSSOVER}
+  ODT_REV_CROSSOVER {{"pow(10, -ODT_KNOT_DENS_10) - ODT_FLARE"}}
+  addUserKnob {7 ODT_DARK_SLOPE}
+  ODT_DARK_SLOPE {{"ODT_REV_CROSSOVER / ODT_CROSSOVER"}}
+ }
+  Expression {
+   inputs 0
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]"
+   temp_name2 j
+   temp_expr2 knot_coord
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 t
+   name Expression2
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos -81
+   ypos 54
+  }
+  Input {
+   inputs 0
+   name Input1
+   xpos 0
+  }
+set N6cfcc00 [stack 0]
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 " ( j <= 0) ?\n    \[value parent.ODT_COEFS0]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS8]\n:\n\n    \[value parent.ODT_COEFS9]"
+   expr1 " ( j <= 0) ?\n    \[value parent.ODT_COEFS1]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS9]\n:\n\n    \[value parent.ODT_COEFS10]"
+   expr2 " ( j <= 0) ?\n    \[value parent.ODT_COEFS2]\n:\n ( j == 1) ?\n    \[value parent.ODT_COEFS3]\n:\n ( j == 2) ?\n    \[value parent.ODT_COEFS4]\n:\n ( j == 3) ?\n    \[value parent.ODT_COEFS5]\n:\n ( j == 4) ?\n    \[value parent.ODT_COEFS6]\n:\n ( j == 5) ?\n    \[value parent.ODT_COEFS7]\n:\n ( j == 6) ?\n    \[value parent.ODT_COEFS8]\n:\n ( j == 7) ?\n    \[value parent.ODT_COEFS9]\n:\n ( j == 8) ?\n    \[value parent.ODT_COEFS10]\n:\n\n    \[value parent.ODT_COEFS11]"
+   expr3 j
+   name Expression1
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 0
+   ypos 150
+  }
+  ColorMatrix {
+   matrix {
+       {0.5 -1 0.5}
+       {-1 1 0}
+       {0.5 0.5 0}
+     }
+   name M
+   xpos 51
+   ypos 212
+  }
+push $N6cfcc00
+  Expression {
+   temp_name0 in_dens
+   temp_expr0 "-log10( r)"
+   temp_name1 knot_coord
+   temp_expr1 "( \[value parent.ODT_KNOT_LEN] - 1) * pow( (( in_dens - \[value parent.ODT_OFFS]) / \[value parent.ODT_SC]), \[value parent.ODT_KNOT_POW])"
+   temp_name2 j
+   temp_expr2 int(knot_coord)
+   temp_name3 t
+   temp_expr3 "knot_coord - j"
+   expr0 "t * t"
+   expr1 t
+   expr2 1
+   expr3 j
+   name Expression3
+   label in_dens
+   note_font "Bitstream Vera Sans"
+   xpos 128
+   ypos 151
+  }
+  Merge2 {
+   inputs 2
+   operation multiply
+   name Multiply
+   xpos 128
+   ypos 249
+  }
+  Expression {
+   channel0 rgb
+   expr0 r+g+b
+   name Expression4
+   xpos 128
+   ypos 273
+  }
+  Expression {
+   channel0 rgba
+   expr0 "pow(10, -r) - \[value parent.ODT_FLARE]"
+   name Expression5
+   xpos 128
+   ypos 308
+  }
+set Nb3273000 [stack 0]
+  Viewer {
+   frame_range 97-287
+   colour_sample_bbox {0.2939999998 0.1059999987 0.2949999869 0.1070000008}
+   name Viewer1
+   xpos 278
+   ypos 344
+  }
+push $Nb3273000
+  Output {
+   name Output1
+   selected true
+   xpos 128
+   ypos 371
+  }
+ end_group
+ Shuffle2 {
+  fromInput1 {{0} B}
+  fromInput2 {{0} B}
+  mappings "4 black -1 -1 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1 black -1 -1 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
+  name Shuffle5
+  xpos 771
+  ypos 95
+ }
+ Merge2 {
+  inputs 3+1
+  operation plus
+  name Plus
+  xpos 771
+  ypos 144
+ }
+ Clamp {
+  name Clamp1
+  xpos 771
+  ypos 168
+ }
+ Switch {
+  inputs 2
+  which {{parent.ratio_preserving_tone_curve}}
+  name Switch1
+  xpos 501
+  ypos 190
+ }
+set N23c43200 [stack 0]
+ Dot {
+  name Dot2
+  xpos 774
+  ypos 381
+ }
+push $N9c77f200
+push $N23c43200
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.alpha
+  name Copy1
+  xpos 339
+  ypos 196
+ }
+ Expression {
+  temp_name0 min_chan
+  temp_expr0 "min( min( r, g), b)"
+  temp_name1 max_chan
+  temp_expr1 "max( max( R, G), B)"
+  temp_name2 inv_sat
+  temp_expr2 "1.0 - ( max_chan - min_chan) / max( a, 1e-8)"
+  channel0 rgba
+  expr0 inv_sat
+  name Expression11
+  label "determine_inv_sat\ninv_sat"
+  xpos 339
+  ypos 228
+ }
+push $N9c77f200
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos 442
+  ypos 260
+ }
+ Expression {
+  channel0 rgba
+  expr0 "a * pow( r, 3.)"
+  name Expression12
+  label d
+  xpos 442
+  ypos 296
+ }
+set N189b5400 [stack 0]
+ Expression {
+  channel0 rgba
+  expr0 1-r
+  name Expression13
+  xpos 442
+  ypos 332
+ }
+push $N23c43200
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply25
+  xpos 507
+  ypos 363
+ }
+push $N189b5400
+push $N9c77f200
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply26
+  xpos 610
+  ypos 359
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus10
+  xpos 604
+  ypos 392
+ }
+ Switch {
+  inputs 2
+  which {{parent.highlight_desat}}
+  name Switch2
+  xpos 604
+  ypos 437
+ }
+set N23c40f00 [stack 0]
+ Colorspace {
+  illuminant_in ACES
+  primary_in ACES
+  colorspace_out CIE-XYZ
+  name Colorspace1
+  xpos 608
+  ypos 483
+ }
+ Colorspace {
+  colorspace_in CIE-XYZ
+  illuminant_in ACES
+  colorspace_out CIE-XYZ
+  bradford_matrix true
+  name Colorspace2
+  xpos 608
+  ypos 507
+ }
+ Colorspace {
+  colorspace_in CIE-XYZ
+  colorspace_out sRGB
+  name Colorspace3
+  xpos 608
+  ypos 531
+ }
+ Output {
+  name Output1
+  xpos 608
+  ypos 593
+ }
+push $N23c40f00
+push $N23c43200
+ Viewer {
+  inputs 2
+  frame 287
+  frame_range 97-100
+  input_number 1
+  center_fstop 0
+  viewerProcess "Raw (ACES)"
+  name Viewer1
+  note_font "Bitstream Vera Sans"
+  xpos 166
+  ypos 260
+ }
+end_group

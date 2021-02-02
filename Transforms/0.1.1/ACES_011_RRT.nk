@@ -6,7 +6,30 @@ Group {
  note_font "Bitstream Vera Sans"
  selected true
  xpos 2987
- ypos -66
+ ypos -38
+ addUserKnob {20 User}
+ addUserKnob {6 rrt_shaper_fwd +STARTLINE}
+ rrt_shaper_fwd true
+ addUserKnob {6 RRT_MTX +STARTLINE}
+ RRT_MTX true
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {6 R_MTX +STARTLINE}
+ R_MTX true
+ addUserKnob {6 R_LUT +STARTLINE}
+ R_LUT true
+ addUserKnob {6 Y_LUT +STARTLINE}
+ Y_LUT true
+ addUserKnob {6 G_LUT +STARTLINE}
+ G_LUT true
+ addUserKnob {6 C_LUT +STARTLINE}
+ C_LUT true
+ addUserKnob {6 B_LUT +STARTLINE}
+ B_LUT true
+ addUserKnob {6 M_LUT +STARTLINE}
+ M_LUT true
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {6 SatMatrix +STARTLINE}
+ SatMatrix true
 }
  BackdropNode {
   inputs 0
@@ -83,6 +106,7 @@ Group {
 set N6dcdf400 [stack 0]
  Dot {
   name Dot1
+  selected true
   xpos -420
   ypos -890
  }
@@ -92,6 +116,7 @@ set N6dcdf000 [stack 0]
   fromInput2 {{0} B}
   mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.blue 0 2 rgba.blue 0 2 rgba.blue 0 2 rgba.green 0 1 rgba.blue 0 2 rgba.red 0 0"
   name Shuffle3
+  selected true
   xpos -371
   ypos -840
  }
@@ -99,6 +124,7 @@ set N6dcdf000 [stack 0]
   name rrt_shaper_fwd2
   xpos -371
   ypos -816
+  disable {{1-parent.rrt_shaper_fwd}}
   addUserKnob {20 User}
   addUserKnob {7 RRT_HI_SLOPE}
   RRT_HI_SLOPE -0.55
@@ -343,6 +369,7 @@ push $N5b6c1c00
   fromInput2 {{0} B}
   mappings "4 black -1 -1 rgba.red 0 0 black -1 -1 rgba.green 0 1 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
   name Shuffle6
+  selected true
   xpos -371
   ypos -792
  }
@@ -353,14 +380,15 @@ push $N6dcdf000
   fromInput2 {{0} B}
   mappings "4 rgba.red 0 0 rgba.red 0 0 rgba.alpha 0 3 rgba.alpha 0 3 rgba.red 0 0 rgba.green 0 1 rgba.red 0 0 rgba.blue 0 2"
   name Shuffle1
+  selected true
   xpos -542
   ypos -840
  }
  Group {
   name rrt_shaper_fwd
-  selected true
   xpos -542
   ypos -816
+  disable {{1-parent.rrt_shaper_fwd}}
   addUserKnob {20 User}
   addUserKnob {7 RRT_HI_SLOPE}
   RRT_HI_SLOPE -0.55
@@ -605,6 +633,7 @@ push $N90c6f800
   fromInput2 {{0} B}
   mappings "4 rgba.red 0 0 rgba.red 0 0 black -1 -1 rgba.green 0 1 black -1 -1 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
   name Shuffle4
+  selected true
   xpos -542
   ypos -792
  }
@@ -614,6 +643,7 @@ push $N6dcdf000
   fromInput2 {{0} B}
   mappings "4 rgba.alpha 0 3 rgba.alpha 0 3 rgba.green 0 1 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1 rgba.green 0 1 rgba.blue 0 2"
   name Shuffle2
+  selected true
   xpos -454
   ypos -840
  }
@@ -621,6 +651,7 @@ push $N6dcdf000
   name rrt_shaper_fwd1
   xpos -454
   ypos -816
+  disable {{1-parent.rrt_shaper_fwd}}
   addUserKnob {20 User}
   addUserKnob {7 RRT_HI_SLOPE}
   RRT_HI_SLOPE -0.55
@@ -865,6 +896,7 @@ push $N54071800
   fromInput2 {{0} B}
   mappings "4 black -1 -1 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1 black -1 -1 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
   name Shuffle5
+  selected true
   xpos -454
   ypos -792
  }
@@ -872,6 +904,7 @@ push $N54071800
   inputs 3+1
   operation plus
   name Plus
+  selected true
   xpos -454
   ypos -755
  }
@@ -891,7 +924,8 @@ push $N54071800
   name ColorMatrix1
   label "/* --- RRT Matrix --- */"
   xpos -454
-  ypos -676
+  ypos -675
+  disable {{1-parent.RRT_MTX}}
  }
 set N9d88fc00 [stack 0]
  Dot {
@@ -1204,9 +1238,10 @@ push $N9d88d000
 push $N9d88d400
  Group {
   name tio_preserving_tonecurve_lut1D6
-  label B_LUT
+  label M_LUT
   xpos 1078
   ypos -283
+  disable {{1-parent.M_LUT}}
   addUserKnob {20 User}
   addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
   addUserKnob {1 ctlLutString}
@@ -1381,6 +1416,7 @@ push $N9d88cc00
   label B_LUT
   xpos 775
   ypos -279
+  disable {{1-parent.B_LUT}}
   addUserKnob {20 User}
   addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
   addUserKnob {1 ctlLutString}
@@ -1555,6 +1591,7 @@ push $N9d88c400
   label C_LUT
   xpos 472
   ypos -281
+  disable {{1-parent.C_LUT}}
   addUserKnob {20 User}
   addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
   addUserKnob {1 ctlLutString}
@@ -1729,6 +1766,7 @@ push $N4c95f800
   label G_LUT
   xpos 169
   ypos -277
+  disable {{1-parent.G_LUT}}
   addUserKnob {20 User}
   addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
   addUserKnob {1 ctlLutString}
@@ -1909,12 +1947,14 @@ push $N4c95f000
   label R
   xpos -444
   ypos -312
+  disable {{1-parent.R_MTX}}
  }
  Group {
   name tio_preserving_tonecurve_lut1D7
   label R_LUT
   xpos -444
-  ypos -254
+  ypos -257
+  disable {{1-parent.R_LUT}}
   addUserKnob {20 User}
   addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
   addUserKnob {1 ctlLutString}
@@ -2027,8 +2067,9 @@ push $N5fbac400
   name Keymix1
   note_font "Bitstream Vera Sans"
   xpos -409
-  ypos -54
+  ypos -55
  }
+set N7e1c3000 [stack 0]
  Dot {
   name Dot4
   label rgbPostHueProcessR
@@ -2087,6 +2128,7 @@ push $N4c95e800
   label Y_LUT
   xpos -139
   ypos -278
+  disable {{1-parent.Y_LUT}}
   addUserKnob {20 User}
   addUserKnob {41 lut l "" -STARTLINE T R_LUT.lut}
   addUserKnob {1 ctlLutString}
@@ -2241,9 +2283,11 @@ push $N9d88e000
       {{"(1.0 - sat) * rgb2Y.b"} {"(1.0 - sat) * rgb2Y.b"} {"(1.0 - sat) * rgb2Y.b + sat"}}
     }
   name ColorMatrix2
+  label SatMatrix
   note_font "Bitstream Vera Sans"
   xpos 222
   ypos 626
+  disable {{1-parent.SatMatrix}}
   addUserKnob {20 User}
   addUserKnob {18 rgb2Y}
   rgb2Y {{1/3} {1/3} {1/3}}
@@ -2277,5 +2321,16 @@ push $N9d88e000
   name Output1
   xpos 211
   ypos 944
+ }
+push $N4c95f000
+push $N7e1c3000
+ Viewer {
+  inputs 2
+  frame_range 97-287
+  input_number 1
+  viewerProcess "sRGB (ACES)"
+  name Viewer1
+  xpos -1034
+  ypos 119
  }
 end_group
