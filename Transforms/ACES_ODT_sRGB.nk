@@ -1,5 +1,5 @@
 set cut_paste_input [stack 0]
-version 12.0 v3
+version 12.2 v4
 push $cut_paste_input
 Group {
  name ODT1
@@ -8,15 +8,15 @@ Group {
  note_font "Bitstream Vera Sans Bold"
  note_font_color 0xffffffff
  selected true
- xpos 24
- ypos 54
+ xpos -210
+ ypos 13
  addUserKnob {20 User}
  addUserKnob {4 surround l Surround M {"Dark Surround" "Dim Surround"}}
  surround "Dim Surround"
  addUserKnob {4 whitepoint l Whitepoint M {Native "D60 Sim" ""}}
  addUserKnob {4 eotf l EOTF M {Rec709 sRGB}}
  eotf sRGB
- addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 ""}
  addUserKnob {26 notes l "" +STARTLINE T "alex@alexfry.com\nwww.alexfry.com"}
 }
  BackdropNode {
@@ -76,7 +76,7 @@ Group {
   xpos 302
   ypos -314
  }
-set N981f400 [stack 0]
+set Nced13800 [stack 0]
  ColorMatrix {
   matrix {
       {0.695452 0.140679 0.163869}
@@ -94,7 +94,7 @@ set N981f400 [stack 0]
   xpos 303
   ypos -26
  }
-set N981ec00 [stack 0]
+set Nced13000 [stack 0]
  Dot {
   name Dot45
   label B
@@ -194,7 +194,7 @@ set N981ec00 [stack 0]
    xpos -315
    ypos 350
   }
-set N9668b800 [stack 0]
+set Nced11c00 [stack 0]
   Dot {
    name Dot59
    xpos -671
@@ -271,7 +271,7 @@ set N9668b800 [stack 0]
    addUserKnob {7 N_KNOTS_HIGH}
    N_KNOTS_HIGH {{parent.N_KNOTS_HIGH}}
   }
-set N9668b000 [stack 0]
+set Nced11400 [stack 0]
   Shuffle {
    red alpha
    green alpha
@@ -281,7 +281,7 @@ set N9668b000 [stack 0]
    xpos -585
    ypos 621
   }
-push $N9668b800
+push $Nced11c00
   Dot {
    name Dot60
    xpos 235
@@ -376,7 +376,7 @@ push $N9668b800
    xpos -191
    ypos 836
   }
-push $N9668b000
+push $Nced11400
   Shuffle {
    red blue
    green blue
@@ -386,13 +386,13 @@ push $N9668b000
    xpos -666
    ypos 622
   }
-push $N9668b800
+push $Nced11c00
   Dot {
    name Dot62
    xpos -68
    ypos 389
   }
-set Na922f000 [stack 0]
+set Nd01e7000 [stack 0]
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -482,7 +482,7 @@ set Na922f000 [stack 0]
    xpos -102
    ypos 485
   }
-push $Na922f000
+push $Nd01e7000
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -590,7 +590,7 @@ push $Na922f000
    ypos 834
   }
 push 0
-push $N9668b000
+push $Nced11400
   Shuffle {
    green red
    blue red
@@ -600,7 +600,7 @@ push $N9668b000
    xpos -830
    ypos 622
   }
-push $N9668b800
+push $Nced11c00
   Dot {
    name Dot64
    xpos -448
@@ -694,7 +694,7 @@ push $N9668b800
    xpos -563
    ypos 838
   }
-push $N9668b000
+push $Nced11400
   Shuffle {
    red green
    blue green
@@ -704,13 +704,13 @@ push $N9668b000
    xpos -746
    ypos 619
   }
-push $N9668b800
+push $Nced11c00
   Dot {
    name Dot66
    xpos -315
    ypos 394
   }
-set N966b1400 [stack 0]
+set Nd0857000 [stack 0]
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -800,7 +800,7 @@ set N966b1400 [stack 0]
    xpos -349
    ypos 484
   }
-push $N966b1400
+push $Nd0857000
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -945,7 +945,7 @@ push $N966b1400
   ypos 204
  }
 push 0
-push $N981ec00
+push $Nced13000
  Dot {
   name Dot57
   label R
@@ -1045,7 +1045,7 @@ push $N981ec00
    xpos -315
    ypos 350
   }
-set N692ab000 [stack 0]
+set Nd6da2800 [stack 0]
   Dot {
    name Dot59
    xpos -671
@@ -1122,7 +1122,7 @@ set N692ab000 [stack 0]
    addUserKnob {7 N_KNOTS_HIGH}
    N_KNOTS_HIGH {{parent.N_KNOTS_HIGH}}
   }
-set N692aa800 [stack 0]
+set Nd6da2000 [stack 0]
   Shuffle {
    red alpha
    green alpha
@@ -1132,7 +1132,7 @@ set N692aa800 [stack 0]
    xpos -585
    ypos 621
   }
-push $N692ab000
+push $Nd6da2800
   Dot {
    name Dot60
    xpos 235
@@ -1227,7 +1227,7 @@ push $N692ab000
    xpos -191
    ypos 836
   }
-push $N692aa800
+push $Nd6da2000
   Shuffle {
    red blue
    green blue
@@ -1237,13 +1237,13 @@ push $N692aa800
    xpos -666
    ypos 622
   }
-push $N692ab000
+push $Nd6da2800
   Dot {
    name Dot62
    xpos -68
    ypos 389
   }
-set Na32a4800 [stack 0]
+set Nf6857c00 [stack 0]
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -1333,7 +1333,7 @@ set Na32a4800 [stack 0]
    xpos -102
    ypos 485
   }
-push $Na32a4800
+push $Nf6857c00
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -1441,7 +1441,7 @@ push $Na32a4800
    ypos 834
   }
 push 0
-push $N692aa800
+push $Nd6da2000
   Shuffle {
    green red
    blue red
@@ -1451,7 +1451,7 @@ push $N692aa800
    xpos -830
    ypos 622
   }
-push $N692ab000
+push $Nd6da2800
   Dot {
    name Dot64
    xpos -448
@@ -1545,7 +1545,7 @@ push $N692ab000
    xpos -563
    ypos 838
   }
-push $N692aa800
+push $Nd6da2000
   Shuffle {
    red green
    blue green
@@ -1555,13 +1555,13 @@ push $N692aa800
    xpos -746
    ypos 619
   }
-push $N692ab000
+push $Nd6da2800
   Dot {
    name Dot66
    xpos -315
    ypos 394
   }
-set Nbb3fac00 [stack 0]
+set Nf9a5fc00 [stack 0]
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -1651,7 +1651,7 @@ set Nbb3fac00 [stack 0]
    xpos -349
    ypos 484
   }
-push $Nbb3fac00
+push $Nf9a5fc00
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -1795,7 +1795,7 @@ push $Nbb3fac00
   xpos 151
   ypos 190
  }
-push $N981ec00
+push $Nced13000
  Dot {
   name Dot69
   label G
@@ -1895,7 +1895,7 @@ push $N981ec00
    xpos -315
    ypos 350
   }
-set Nab932800 [stack 0]
+set Nf99f3400 [stack 0]
   Dot {
    name Dot59
    xpos -671
@@ -1972,7 +1972,7 @@ set Nab932800 [stack 0]
    addUserKnob {7 N_KNOTS_HIGH}
    N_KNOTS_HIGH {{parent.N_KNOTS_HIGH}}
   }
-set Nab932000 [stack 0]
+set Nf99f2c00 [stack 0]
   Shuffle {
    red alpha
    green alpha
@@ -1982,7 +1982,7 @@ set Nab932000 [stack 0]
    xpos -585
    ypos 621
   }
-push $Nab932800
+push $Nf99f3400
   Dot {
    name Dot60
    xpos 235
@@ -2077,7 +2077,7 @@ push $Nab932800
    xpos -191
    ypos 836
   }
-push $Nab932000
+push $Nf99f2c00
   Shuffle {
    red blue
    green blue
@@ -2087,13 +2087,13 @@ push $Nab932000
    xpos -666
    ypos 622
   }
-push $Nab932800
+push $Nf99f3400
   Dot {
    name Dot62
    xpos -68
    ypos 389
   }
-set Nab962000 [stack 0]
+set Nf99f0c00 [stack 0]
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -2183,7 +2183,7 @@ set Nab962000 [stack 0]
    xpos -102
    ypos 485
   }
-push $Nab962000
+push $Nf99f0c00
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -2291,7 +2291,7 @@ push $Nab962000
    ypos 834
   }
 push 0
-push $Nab932000
+push $Nf99f2c00
   Shuffle {
    green red
    blue red
@@ -2301,7 +2301,7 @@ push $Nab932000
    xpos -830
    ypos 622
   }
-push $Nab932800
+push $Nf99f3400
   Dot {
    name Dot64
    xpos -448
@@ -2395,7 +2395,7 @@ push $Nab932800
    xpos -563
    ypos 838
   }
-push $Nab932000
+push $Nf99f2c00
   Shuffle {
    red green
    blue green
@@ -2405,13 +2405,13 @@ push $Nab932000
    xpos -746
    ypos 619
   }
-push $Nab932800
+push $Nf99f3400
   Dot {
    name Dot66
    xpos -315
    ypos 394
   }
-set Na39ec400 [stack 0]
+set Nf9d58c00 [stack 0]
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -2501,7 +2501,7 @@ set Na39ec400 [stack 0]
    xpos -349
    ypos 484
   }
-push $Na39ec400
+push $Nf9d58c00
   Expression {
    temp_name0 logx
    temp_expr0 "log10( max(r, 5.96046448e-08 ))"
@@ -2673,7 +2673,7 @@ push $Na39ec400
   xpos 269
   ypos 519
  }
-set Nab872800 [stack 0]
+set Nf9ce8c00 [stack 0]
  Expression {
   temp_name0 SCALE
   temp_expr0 0.955
@@ -2685,7 +2685,7 @@ set Nab872800 [stack 0]
   xpos 172
   ypos 591
  }
-push $Nab872800
+push $Nf9ce8c00
  Switch {
   inputs 2
   which {{parent.whitepoint}}
@@ -2693,13 +2693,59 @@ push $Nab872800
   xpos 269
   ypos 663
  }
-set N39ad8d00 [stack 0]
+set Nf99f7200 [stack 0]
+ ColorMatrix {
+  matrix {
+      {0.66245418 0.13400421 0.15618769}
+      {0.27222872 0.67408177 0.05368952}
+      {-0.00557465 0.00406073 1.0103391}
+    }
+  name AP1_to_XYZ
+  xpos 548
+  ypos 690
+ }
+ Colorspace {
+  colorspace_in CIE-XYZ
+  colorspace_out CIE-Yxy
+  name XYZ_to_Yxy
+  xpos 548
+  ypos 714
+ }
+ Clamp {
+  channels {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  maximum 65504
+  MaxClampTo 65504
+  name Clamp3
+  label "(\[value minimum], \[value maximum])"
+  xpos 548
+  ypos 738
+ }
  Gamma {
+  channels {rgba.red -rgba.green -rgba.blue -rgba.alpha}
   value {{1/0.9811}}
   name DIM_SURROUND_GAMMA
-  xpos 407
-  ypos 686
+  xpos 548
+  ypos 792
  }
+ Colorspace {
+  colorspace_in CIE-Yxy
+  colorspace_out CIE-XYZ
+  name Yxy_to_XYZ
+  selected true
+  xpos 548
+  ypos 826
+ }
+ ColorMatrix {
+  matrix {
+      {1.64102338 -0.32480329 -0.2364247}
+      {-0.66366286 1.61533159 0.01675635}
+      {0.01172189 -0.00828444 0.98839486}
+    }
+  name XYZ_to_AP1
+  xpos 548
+  ypos 857
+ }
+set Na0a6b000 [stack 0]
  ColorMatrix {
   matrix {
       {0.949056 0.0471857 0.00375827}
@@ -2717,14 +2763,7 @@ set N39ad8d00 [stack 0]
   addUserKnob {7 sat}
   sat 0.93
  }
-set N3a443c00 [stack 0]
- Clamp {
-  name Clamp2
-  xpos 407
-  ypos 1154
- }
-push $N3a443c00
-push $N39ad8d00
+push $Nf99f7200
  Switch {
   inputs 2
   which {{parent.surround}}
@@ -2743,8 +2782,8 @@ push $N39ad8d00
   xpos 253
   ypos 992
  }
-set N2f3f4800 [stack 0]
-push $N2f3f4800
+set Nf9c67400 [stack 0]
+push $Nf9c67400
  ColorMatrix {
   matrix {
       {0.987224 -0.00611327 0.0159533}
@@ -2756,7 +2795,7 @@ push $N2f3f4800
   xpos 164
   ypos 1049
  }
-set N72e7d400 [stack 0]
+set Nf9c67000 [stack 0]
  Switch {
   inputs 2
   which {{parent.whitepoint}}
@@ -2764,7 +2803,7 @@ set N72e7d400 [stack 0]
   xpos 260
   ypos 1104
  }
-set N7ea69b00 [stack 0]
+set Nf9c53900 [stack 0]
  Colorspace {
   colorspace_in CIE-XYZ
   colorspace_out sRGB
@@ -2773,7 +2812,7 @@ set N7ea69b00 [stack 0]
   xpos 360
   ypos 1351
  }
-push $N7ea69b00
+push $Nf9c53900
  Colorspace {
   colorspace_in CIE-XYZ
   colorspace_out 2.40
@@ -2789,7 +2828,7 @@ push $N7ea69b00
   xpos 257
   ypos 1407
  }
-push $N981f400
+push $Nced13800
  Dot {
   name Dot2
   xpos 706
@@ -2821,29 +2860,6 @@ push $N981f400
   name Output1
   xpos 268
   ypos 1801
- }
-push $N2f3f4800
- Colorspace {
-  colorspace_in CIE-XYZ
-  illuminant_in ACES
-  colorspace_out CIE-XYZ
-  bradford_matrix true
-  name CAT
-  label "// Apply CAT from ACES white point to assumed observer adapted white point"
-  xpos -31
-  ypos 1046
- }
-push $N72e7d400
- Viewer {
-  inputs 2
-  frame_range 1-100
-  frame_range_lock true
-  input_number 1
-  colour_sample_bbox {0.5068359375 -0.3134765625 0.9072265625 0.1982421875}
-  viewerProcess "sRGB (ACES)"
-  name Viewer1
-  xpos 399
-  ypos 470
  }
  Expression {
   inputs 0
@@ -2881,7 +2897,7 @@ push $N72e7d400
   xpos -80
   ypos 1202
  }
-push $N7ea69b00
+push $Nf9c53900
  ColorMatrix {
   matrix {
       {2.402741414 -0.8974841639 -0.38805337}
@@ -2899,14 +2915,14 @@ push $N7ea69b00
   xpos 150
   ypos 1183
  }
-set N8f0dd800 [stack 0]
+set Nf9bebc00 [stack 0]
  Colorspace {
   colorspace_out sRGB
   name Colorspace3
   xpos 42
   ypos 1319
  }
-push $N8f0dd800
+push $Nf9bebc00
  Expression {
   temp_name0 DISPGAMMA
   temp_expr0 2.6
@@ -2915,8 +2931,42 @@ push $N8f0dd800
   expr2 "pow( b, 1./ DISPGAMMA)"
   name Expression12
   label "  // Encode linear code values with transfer function\n    float outputCV\[3] = pow_f3( linearCV, 1./ DISPGAMMA);"
-  selected true
   xpos 141
   ypos 1280
+ }
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push $Nf9c67400
+ Colorspace {
+  colorspace_in CIE-XYZ
+  illuminant_in ACES
+  colorspace_out CIE-XYZ
+  bradford_matrix true
+  name CAT
+  label "// Apply CAT from ACES white point to assumed observer adapted white point"
+  xpos -31
+  ypos 1046
+ }
+push $Nf9c67000
+ Viewer {
+  inputs 10
+  frame_range 1-100
+  frame_range_lock true
+  input_number 9
+  colour_sample_bbox {0.5068359375 -0.3134765625 0.9072265625 0.1982421875}
+  name Viewer1
+  xpos 399
+  ypos 470
+ }
+push $Na0a6b000
+ Clamp {
+  name Clamp2
+  xpos 407
+  ypos 1154
  }
 end_group
